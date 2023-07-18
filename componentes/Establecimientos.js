@@ -29,29 +29,29 @@ const Establecimientos = () => {
   return (
     <View style={styles.container}>
       <View style={styles.hora}>
-        <Text>
+        <Text style={styles.texto}>
           Antes de entrar en materia, consulta la disponibilidad para hoy:
         </Text>
         <TouchableOpacity onPress={handleComidaPress}>
-          <Text style={styles.disponible}>Con disponibilidad para comida</Text>
+          <Text style={styles.link}>Con disponibilidad para comida</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={handleCenaPress}>
-          <Text style={styles.disponible}>Con disponibilidad para cena</Text>
+          <Text style={styles.link}>Con disponibilidad para cena</Text>
         </TouchableOpacity>
       </View>
       <Text style={styles.heading}>Elige categoría:</Text>
       <View style={styles.lista}>
         <TouchableOpacity onPress={() => navigation.navigate("Bares")}>
-          <Text>BARES</Text>
+          <Text style={styles.link}>BARES</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Restaurantes")}>
-          <Text>RESTAURANTES</Text>
+          <Text style={styles.link}>RESTAURANTES</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
-
+ 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -69,10 +69,23 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 8,
+    marginTop:50
   },
   lista: {
     alignItems: "center",
   },
+  link: {
+    fontSize: 16,
+    color: "blue",
+    textDecorationLine: "underline",
+    marginTop:20,
+  
+    
+  },
+  texto:{
+    fontSize:20,
+    marginTop:-100,
+  } 
 });
 
 export default Establecimientos;

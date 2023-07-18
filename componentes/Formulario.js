@@ -1,10 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Clima from "../anexos/clima";
-import { View, Text, TextInput, Button } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 
 const Formulario = () => {
-  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState } = useForm();
+const { errors } = formState;
 
   const accion = async (datos) => {
     try {
@@ -24,22 +24,25 @@ const Formulario = () => {
   };
 
   return (
-    <View>
-      <View>
-        <Text>Alias</Text>
+    <View style={styles.container}>
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Alias</Text>
         <TextInput
+          style={styles.input}
           placeholder="Introduce tu alias"
           {...register("alias", { required: true })}
+
         />
         {errors.alias?.type === "required" && (
-          <Text>Es obligatorio ingresar un alias</Text>
+          <Text style={styles.errorText}>Es obligatorio ingresar un alias</Text>
         )}
       </View>
-      <View>
-        <Text>Preferencias</Text>
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Preferencias</Text>
         <View>
-          <Text>Bares, tascas y demás</Text>
+          <Text style={styles.subLabel}>Bares, tascas y demás</Text>
           <TextInput
+            style={styles.radioInput}
             type="radio"
             name="sitios"
             value="bares"
@@ -47,8 +50,9 @@ const Formulario = () => {
           />
         </View>
         <View>
-          <Text>Restaurantes y cosas finas</Text>
+          <Text style={styles.subLabel}>Restaurantes y cosas finas</Text>
           <TextInput
+            style={styles.radioInput}
             type="radio"
             name="sitios"
             value="restaurantes"
@@ -56,32 +60,72 @@ const Formulario = () => {
           />
         </View>
         {errors.preferencias?.type === "required" && (
-          <Text>Por favor, elige una preferencia</Text>
+          <Text style={styles.errorText}>Por favor, elige una preferencia</Text>
         )}
       </View>
-      <View>
-        <Text>E-Mail</Text>
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>E-Mail</Text>
         <TextInput
+          style={styles.input}
           placeholder="Introduce tu email"
           {...register("correo", {
             pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/,
           })}
         />
         {errors.correo?.type === "pattern" && (
-          <Text>Eso no es un correo válido</Text>
+          <Text style={styles.errorText}>Eso no es un correo válido</Text>
         )}
       </View>
-      <View>
-        <Text>COMENTARIOS</Text>
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>COMENTARIOS</Text>
         <TextInput
+          style={styles.input}
           placeholder="Puedes enviar un establecimiento que deseas que incluya. Solo escribe el nombre"
           {...register("comentarios")}
         />
       </View>
       <Button title="ENVIAR DATOS" onPress={handleSubmit(accion)} />
-      <Clima />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingHorizontal: 20,
+    paddingTop: 20,
+  },
+  inputContainer: {
+    marginBottom: 20,
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginBottom: 5,
+  },
+  subLabel: {
+    fontSize: 14,
+    marginBottom: 5,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 5,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+  },
+  radioInput: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 5,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    marginTop: 5,
+  },
+  errorText: {
+    color: "red",
+    marginTop: 5,
+  },
+});
 
 export default Formulario;

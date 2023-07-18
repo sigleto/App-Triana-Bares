@@ -4,10 +4,12 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+
 import Home from '../componentes/Home';
 import Establecimientos from "../componentes/Establecimientos";
 import Bares from "../componentes/Bares";
 import Restaurantes from "../componentes/Restaurantes";
+import Formulario from '../componentes/Formulario';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -23,8 +25,12 @@ function EstablecimientosStack() {
 }
 
 function MyTabs() {
+
+
   return (
-    <Tab.Navigator initialRouteName="Home">
+    <Tab.Navigator 
+    initialRouteName="Home">
+      
       <Tab.Screen
         name="Home"
         component={Home}
@@ -32,9 +38,10 @@ function MyTabs() {
           tabBarLabel: "Inicio",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={26} />
-          ),
+          )
         }}
       />
+
       <Tab.Screen
         name="Establecimientos"
         component={EstablecimientosStack}
@@ -49,6 +56,19 @@ function MyTabs() {
           ),
         }}
       />
+
+<Tab.Screen
+        name="Formulario"
+        component={Formulario}
+        options={{
+          tabBarLabel: "Formulario",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="file-document-outline" color={color} size={26} />
+          ),
+        }}
+      />
+
+      
     </Tab.Navigator>
   );
 }

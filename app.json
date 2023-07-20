@@ -4,10 +4,10 @@
     "slug": "probando",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/centollo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/centollo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

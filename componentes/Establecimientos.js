@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 16,
+    backgroundColor:'#f6f6e2'
   },
   hora: {
     marginBottom: 16,

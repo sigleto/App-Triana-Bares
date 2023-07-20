@@ -29,15 +29,17 @@ function MyTabs() {
 
   return (
     <Tab.Navigator 
-    initialRouteName="Home">
+    initialRouteName="Home"
+    screenOptions={{tabBarColor:'#f6f6e2'}}
+    >
       
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
           tabBarLabel: "Inicio",
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="home"  size={26} />
           )
         }}
       />
@@ -47,10 +49,10 @@ function MyTabs() {
         component={EstablecimientosStack}
         options={{
           tabBarLabel: "Establecimientos",
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: () => (
             <MaterialCommunityIcons
               name="store"
-              color={color}
+              
               size={26}
             />
           ),
@@ -61,9 +63,9 @@ function MyTabs() {
         name="Formulario"
         component={Formulario}
         options={{
-          tabBarLabel: "Formulario",
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="file-document-outline" color={color} size={26} />
+          tabBarLabel: "Contacto",
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="file-document-outline"  size={26} />
           ),
         }}
       />

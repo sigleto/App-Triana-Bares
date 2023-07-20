@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from "react-native";
 
 const Formulario = () => {
   const { register, handleSubmit, reset, formState } = useForm();
-const { errors } = formState;
+  const { errors } = formState;
+
+  const [preferencias, setPreferencias] = useState("");
 
   const accion = async (datos) => {
     try {
       await fetch("https://pagina-react-para-vercel.vercel.app/formulario", {
-        method: 'POST',
-        mode: 'cors',
-        body: JSON.stringify(datos),
-        headers: { "Content-Type": "application/json" }
+        method: "POST",
+        mode: "cors",
+        body: JSON.stringify({ ...datos, preferencias }),
+        headers: { "Content-Type": "application/json" },
       });
       console.log("Datos enviados correctamente");
       reset();
@@ -31,7 +33,6 @@ const { errors } = formState;
           style={styles.input}
           placeholder="Introduce tu alias"
           {...register("alias", { required: true })}
-
         />
         {errors.alias?.type === "required" && (
           <Text style={styles.errorText}>Es obligatorio ingresar un alias</Text>
@@ -39,29 +40,30 @@ const { errors } = formState;
       </View>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Preferencias</Text>
-        <View>
+        <TouchableOpacity
+          style={styles.optionContainer}
+          onPress={() => setPreferencias("bares")}
+        >
           <Text style={styles.subLabel}>Bares, tascas y demás</Text>
-          <TextInput
-            style={styles.radioInput}
-            type="radio"
-            name="sitios"
-            value="bares"
-            {...register("preferencias", { required: true })}
-          />
-        </View>
-        <View>
+          <Text style={preferencias === "bares" ? styles.selectedOption : styles.unselectedOption}>
+            {preferencias === "bares" ? "✓" : ""}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.optionContainer}
+          onPress={() => setPreferencias("restaurantes")}
+        >
           <Text style={styles.subLabel}>Restaurantes y cosas finas</Text>
-          <TextInput
-            style={styles.radioInput}
-            type="radio"
-            name="sitios"
-            value="restaurantes"
-            {...register("preferencias", { required: true })}
-          />
-        </View>
+          <Text style={preferencias === "restaurantes" ? styles.selectedOption : styles.unselectedOption}>
+            {preferencias === "restaurantes" ? "✓" : ""}
+          </Text>
+          
+        </TouchableOpacity>
+        
         {errors.preferencias?.type === "required" && (
           <Text style={styles.errorText}>Por favor, elige una preferencia</Text>
         )}
+        
       </View>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>E-Mail</Text>
@@ -94,6 +96,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
     paddingTop: 20,
+    backgroundColor:'#f6f6e2'
   },
   inputContainer: {
     marginBottom: 20,
@@ -114,13 +117,17 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 10,
   },
-  radioInput: {
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 5,
-    paddingVertical: 8,
-    paddingHorizontal: 10,
-    marginTop: 5,
+  optionContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  selectedOption: {
+    color: "#007AFF",
+    marginLeft: 5,
+  },
+  unselectedOption: {
+    color: "#999",
+    marginLeft: 5,
   },
   errorText: {
     color: "red",

@@ -1,5 +1,5 @@
 export const tema = {
-    backgroundColor: '#F5F5F5', 
+    backgroundColor: '#f6f6e2', 
    
     
     // Establece el color de fondo deseado

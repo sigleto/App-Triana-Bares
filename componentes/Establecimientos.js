@@ -4,7 +4,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import *as WebBrowser from 'expo-web-browser'
 
-const Establecimientos = () => {
+const Establecimi = () => {
   const fecha = new Date();
   const mes = fecha.getMonth() + 1;
   const dia = fecha.getDate();
@@ -30,7 +30,7 @@ const Establecimientos = () => {
     <View style={styles.container}>
       <View style={styles.hora}>
         <Text style={styles.texto}>
-          Antes de entrar en materia, consulta la disponibilidad para hoy:
+          Antes de entrar en materia, puedes consultar en "thefork.es" la disponibilidad para hoy:
         </Text>
         <TouchableOpacity onPress={handleComidaPress}>
           <Text style={styles.link}>Con disponibilidad para comida</Text>
@@ -84,9 +84,10 @@ const styles = StyleSheet.create({
     
   },
   texto:{
-    fontSize:20,
+    fontSize:17,
     marginTop:-100,
+    textAlign: 'justify'
   } 
 });
 
-export default Establecimientos;
+export default Establecimi;

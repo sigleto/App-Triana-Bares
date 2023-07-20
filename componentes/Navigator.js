@@ -6,7 +6,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 
 import Home from '../componentes/Home';
-import Establecimientos from "../componentes/Establecimientos";
+import Establecimi from "../componentes/Establecimientos";
 import Bares from "../componentes/Bares";
 import Restaurantes from "../componentes/Restaurantes";
 import Formulario from '../componentes/Formulario';
@@ -17,7 +17,7 @@ const Stack = createStackNavigator();
 function EstablecimientosStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Establecimientos" component={Establecimientos} />
+      <Stack.Screen name="Establecimientos" component={Establecimi} />
       <Stack.Screen name="Bares" component={Bares} />
       <Stack.Screen name="Restaurantes" component={Restaurantes} />
     </Stack.Navigator>
@@ -29,11 +29,10 @@ function MyTabs() {
 
   return (
     <Tab.Navigator 
-    initialRouteName="Home"
-    screenOptions={{tabBarColor:'#f6f6e2'}}
+   
     >
       
-      <Tab.Screen
+      <Tab.Screen 
         name="Home"
         component={Home}
         options={{
@@ -82,3 +81,4 @@ export default function Navigation() {
     </NavigationContainer>
   );
 }
+

@@ -53,7 +53,7 @@ const Formulario = () => {
           style={styles.optionContainer}
           onPress={() => setPreferencias("restaurantes")}
         >
-          <Text style={styles.subLabel}>Restaurantes y cosas finas</Text>
+          <Text style={styles.subLabel}>Restaurantes y similares</Text>
           <Text style={preferencias === "restaurantes" ? styles.selectedOption : styles.unselectedOption}>
             {preferencias === "restaurantes" ? "✓" : ""}
           </Text>
@@ -109,6 +109,7 @@ const styles = StyleSheet.create({
   subLabel: {
     fontSize: 14,
     marginBottom: 5,
+   color:'olive'
   },
   input: {
     borderWidth: 1,

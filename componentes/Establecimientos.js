@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { View, Text, StyleSheet} from "react-native";
+import { View, Text, StyleSheet,ScrollView} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import *as WebBrowser from 'expo-web-browser'
@@ -27,7 +27,7 @@ const Establecimi = () => {
   
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.hora}>
         <Text style={styles.texto}>
           Antes de entrar en materia, puedes consultar en "thefork.es" la disponibilidad para hoy:
@@ -48,7 +48,7 @@ const Establecimi = () => {
           <Text style={styles.link}>RESTAURANTES</Text>
         </TouchableOpacity>
       </View>
-    </View>
+      </ScrollView>
   );
 };
  

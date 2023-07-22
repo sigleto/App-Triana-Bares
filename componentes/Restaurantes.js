@@ -47,10 +47,10 @@ const Restaurantes = () => {
   </View>
 <View style={styles.estab}>
     <Text style={styles.bar}>LA PRIMERA DEL PUENTE</Text>
-    <TouchableOpacity onPress={() => handleLinkPress("")}>
+    <TouchableOpacity>
       <Text style={styles.link}>Ubicación</Text>
     </TouchableOpacity>
-    <TouchableOpacity onPress={() => handleLinkPress("")}>
+    <TouchableOpacity >
       <Text style={styles.link}>Reservas: Tfno 954276918</Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => handleLinkPress("https://www.tripadvisor.es/Restaurant_Review-g187443-d23498957-Reviews-La_Primera_del_Puente-Seville_Province_of_Seville_Andalucia.html")}>
@@ -101,7 +101,7 @@ const Restaurantes = () => {
     <TouchableOpacity >
       <Text style={styles.link}>Reserva: Tfno:  955 46 73 00</Text>
     </TouchableOpacity>
-    <TouchableOpacity onPress={() => handleLinkPress("")}>
+    <TouchableOpacity >
       <Text style={styles.link}>Estrellas de TripAdvisor</Text>
     </TouchableOpacity>
   </View>

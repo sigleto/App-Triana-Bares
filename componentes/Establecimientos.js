@@ -27,7 +27,7 @@ const Establecimi = () => {
   
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <View style={styles.hora}>
         <Text style={styles.texto}>
           Antes de entrar en materia, puedes consultar en "thefork.es" la disponibilidad para hoy:
@@ -48,7 +48,7 @@ const Establecimi = () => {
           <Text style={styles.link}>RESTAURANTES</Text>
         </TouchableOpacity>
       </View>
-      </ScrollView>
+      </View>
   );
 };
  

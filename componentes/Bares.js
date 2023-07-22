@@ -7,7 +7,7 @@ const Bares = () => {
     Linking.openURL(url);
   };
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView style={styles.container}>
     
       <View style={styles.estab}>
         <Text style={styles.bar}>LA PARRALA</Text>

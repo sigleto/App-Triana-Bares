@@ -1,6 +1,6 @@
 2 / 2
 import React from "react";
-import { View, Text, StyleSheet, Linking } from "react-native";
+import { View, Text, StyleSheet, Linking,ScrollView } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Restaurantes = () => {
@@ -8,7 +8,7 @@ const Restaurantes = () => {
     Linking.openURL(url);
   };
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
 <View style={styles.estab}>
     <Text style={styles.bar}>VICTORIA 8</Text>
     <TouchableOpacity onPress={() => handleLinkPress("https://www.google.es/maps/place/Restaurante+Victoria+8/@37.3830354,-6.0025717,15z/data=!4m5!3m4!1s0x0:0x8f72e73773904258!8m2!3d37.3830832!4d-6.0027072")}>
@@ -154,7 +154,7 @@ const Restaurantes = () => {
     </TouchableOpacity>
   </View>
 
-  </View>
+  </ScrollView>
 );
 };
 

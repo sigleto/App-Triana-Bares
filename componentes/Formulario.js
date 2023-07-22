@@ -81,8 +81,8 @@ const Formulario = () => {
       <View style={styles.inputContainer}>
         <Text style={styles.label}>COMENTARIOS</Text>
         <TextInput
-          style={styles.input}
-          placeholder="Puedes enviar un establecimiento que deseas que incluya. Solo escribe el nombre"
+          style={styles.inputComentario}
+          placeholder='Puedes enviar un establecimiento que deseas que se incluya. Solo escribe el nombre'
           {...register("comentarios")}
         />
       </View>
@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingVertical: 8,
     paddingHorizontal: 10,
+    
   },
   optionContainer: {
     flexDirection: "row",
@@ -134,6 +135,16 @@ const styles = StyleSheet.create({
     color: "red",
     marginTop: 5,
   },
+  inputComentario: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 5,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    height:120
+    
+  }
+
 });
 
 export default Formulario;

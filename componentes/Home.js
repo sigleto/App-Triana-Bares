@@ -9,8 +9,10 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.imagenes}>
       <Image style={styles.logo} source={require('../assets/LogoJuan.png')} />
       <Image style={styles.imagen} source={require('../assets/principal.webp')} />
+      </View>
       <View style={styles.parrafo}>
         <Text style={styles.per}>
           Esta página contiene una relación de establecimientos gastronómicos distribuidos en las categorías de "BARES" y "RESTAURANTES". La principal diferencia entre ambas es que en todos los sitios incluidos como restaurantes se puede reservar. Ello no quiere decir que también lo puedas hacer en algunos bares.
@@ -34,12 +36,13 @@ const styles = StyleSheet.create({
     backgroundColor:'#f6f6e2'
   },
   logo: {
-    width: 200,
-    height: 100,
+    
+    width: 250,
+    height: 170,
   },
   imagen: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 160,
   },
   parrafo: {
     marginTop: 20,
@@ -53,6 +56,9 @@ const styles = StyleSheet.create({
     color: 'blue',
     
   },
+  imagenes:{
+    marginTop:10
+  }
 });
 
 export default Home;

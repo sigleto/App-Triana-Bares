@@ -1,14 +1,17 @@
 {
-  "name": "probando",
+  "name": "proyecto-app",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
+    "start": "concurrently \"npm run server\" \"expo start\"",
+    "expo-start": "timeout 5 && expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "server": "cd backend && npm run dev"
   },
   "dependencies": {
+    "@expo/ngrok": "^4.1.0",
     "@react-navigation/material-bottom-tabs": "^6.2.16",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/stack": "^6.3.17",
@@ -26,7 +29,8 @@
     "styled-components": "^6.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "concurrently": "^8.2.0"
   },
   "private": true
 }

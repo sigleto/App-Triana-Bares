@@ -123,8 +123,61 @@ const Formulario = () => {
         </View>
         <Image style={styles.imagen} source={require('../assets/pulpo.jpg')} />
       </View>
+<<<<<<< HEAD
       
     </>
+=======
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Preferencias</Text>
+        <TouchableOpacity
+          style={styles.optionContainer}
+          onPress={() => setPreferencias("bares")}
+        >
+          <Text style={styles.subLabel}>Bares, tascas y demás</Text>
+          <Text style={preferencias === "bares" ? styles.selectedOption : styles.unselectedOption}>
+            {preferencias === "bares" ? "✓" : ""}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.optionContainer}
+          onPress={() => setPreferencias("restaurantes")}
+        >
+          <Text style={styles.subLabel}>Restaurantes y similares</Text>
+          <Text style={preferencias === "restaurantes" ? styles.selectedOption : styles.unselectedOption}>
+            {preferencias === "restaurantes" ? "✓" : ""}
+          </Text>
+          
+        </TouchableOpacity>
+        
+        {errors.preferencias?.type === "required" && (
+          <Text style={styles.errorText}>Por favor, elige una preferencia</Text>
+        )}
+        
+      </View>
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>E-Mail</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Introduce tu email"
+          {...register("correo", {
+            pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/,
+          })}
+        />
+        {errors.correo?.type === "pattern" && (
+          <Text style={styles.errorText}>Eso no es un correo válido</Text>
+        )}
+      </View>
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>COMENTARIOS</Text>
+        <TextInput
+          style={styles.inputComentario}
+          placeholder='Puedes enviar un establecimiento que deseas que se incluya. Solo escribe el nombre'
+          {...register("comentarios")}
+        />
+      </View>
+      <Button title="ENVIAR DATOS" onPress={handleSubmit(accion)} />
+    </View>
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
   );
 };
 
@@ -163,8 +216,15 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     borderColor: "#ccc",
+<<<<<<< HEAD
     borderRadius: 4,
     padding: 10,
+=======
+    borderRadius: 5,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
   },
   multilineInput: {
     height: 100,
@@ -188,6 +248,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 4,
   },
+<<<<<<< HEAD
   label: {
     
     marginBottom: 8,
@@ -215,6 +276,18 @@ const styles = StyleSheet.create({
 
 
    
+=======
+  inputComentario: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 5,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    height:120
+    
+  }
+
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
 });
 
 export default Formulario;

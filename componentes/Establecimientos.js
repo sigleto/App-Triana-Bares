@@ -1,5 +1,9 @@
 import React,{useState} from "react";
+<<<<<<< HEAD
 import { View, Text, StyleSheet,ImageBackground} from "react-native";
+=======
+import { View, Text, StyleSheet,ScrollView} from "react-native";
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import *as WebBrowser from 'expo-web-browser'
@@ -49,8 +53,12 @@ const Establecimi = () => {
           <Text style={styles.link}>RESTAURANTES</Text>
         </TouchableOpacity>
       </View>
+<<<<<<< HEAD
       
     </View>
+=======
+      </View>
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
   );
 };
  

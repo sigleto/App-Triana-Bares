@@ -12,7 +12,11 @@ const Restaurantes = () => {
   }
   return (
     <ScrollView style={styles.container}>
+<<<<<<< HEAD
    <View style={styles.estab}>
+=======
+<View style={styles.estab}>
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
     <Text style={styles.bar}>VICTORIA 8</Text>
     <TouchableOpacity onPress={() => handleLinkPress("https://www.google.es/maps/place/Restaurante+Victoria+8/@37.3830354,-6.0025717,15z/data=!4m5!3m4!1s0x0:0x8f72e73773904258!8m2!3d37.3830832!4d-6.0027072")}>
       <Text style={styles.link}>Ubicación</Text>
@@ -29,7 +33,11 @@ const Restaurantes = () => {
     <TouchableOpacity onPress={() => handleLinkPress("https://www.google.es/maps/place/Alfarer%C3%ADa+21+-+Casa+Montalv%C3%A1n/@37.385251,-6.0060092,18z/data=!4m5!3m4!1s0xd126dcc91390a41:0x822a8a2a0246d830!8m2!3d37.3847906!4d-6.0049599?hl=es&authuser=0")}>
       <Text style={styles.link}>Ubicación</Text>
     </TouchableOpacity>
+<<<<<<< HEAD
     <TouchableOpacity onPress={()=>handleCall("955834875")}>
+=======
+    <TouchableOpacity >
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
       <Text style={styles.link}>Reserva: Tfno 955 83 48 75 </Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => handleLinkPress("https://www.tripadvisor.es/Restaurant_Review-g187443-d14953628-Reviews-Alfareria_21-Seville_Province_of_Seville_Andalucia.html")}>
@@ -38,7 +46,11 @@ const Restaurantes = () => {
   </View>
 <View style={styles.estab}>
     <Text style={styles.bar}>MARIA TRIFULCA</Text>
+<<<<<<< HEAD
     <TouchableOpacity onPress={() => handleLinkPress("https://www.google.com/maps/place/Mariatrifulca/@37.3856314,-6.0076177,17z/data=!3m1!5s0xd126c1363d3b17f:0xfdcc1f60bc6faff8!4m6!3m5!1s0xd126c1366ccea15:0x51bff603ff41aa85!8m2!3d37.3856358!4d-6.0027468!16s%2Fg%2F11c55ph870?authuser=0&entry=ttu")}>
+=======
+    <TouchableOpacity onPress={() => handleLinkPress("https://www.tripadvisor.es/Restaurant_Review-g187443-d14953628-Reviews-Alfareria_21-Seville_Province_of_Seville_Andalucia.html")}>
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
       <Text style={styles.link}>Ubicación</Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => handleLinkPress("https://mariatrifulca.com/#reservas")}>
@@ -50,11 +62,19 @@ const Restaurantes = () => {
   </View>
 <View style={styles.estab}>
     <Text style={styles.bar}>LA PRIMERA DEL PUENTE</Text>
+<<<<<<< HEAD
     <TouchableOpacity onPress={()=>handleLinkPress("https://www.google.com/maps/place/Restaurante+La+Primera+Del+Puente/@37.3813892,-6.0003564,17z/data=!3m2!4b1!5s0xd126c166b3379c1:0xa0eb29d4e43319bb!4m6!3m5!1s0xd126c161686585b:0xad9c484fdb83d578!8m2!3d37.381385!4d-5.9977815!16s%2Fg%2F1tdjsd9s?authuser=0&entry=ttu")}>
       <Text style={styles.link}>Ubicación</Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={()=>handleCall("954276918")}>
       <Text style={styles.link}>Reservas: Tfno 954 27 69 18</Text>
+=======
+    <TouchableOpacity>
+      <Text style={styles.link}>Ubicación</Text>
+    </TouchableOpacity>
+    <TouchableOpacity >
+      <Text style={styles.link}>Reservas: Tfno 954276918</Text>
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
     </TouchableOpacity>
     <TouchableOpacity onPress={() => handleLinkPress("https://www.tripadvisor.es/Restaurant_Review-g187443-d23498957-Reviews-La_Primera_del_Puente-Seville_Province_of_Seville_Andalucia.html")}>
       <Text style={styles.link}>Estrellas de TripAdvisor</Text>
@@ -101,10 +121,17 @@ const Restaurantes = () => {
     <TouchableOpacity onPress={() => handleLinkPress("https://www.google.es/maps/place/Restaurante+La+Valiente/@37.3846631,-6.0068482,674m/data=!3m1!1e3!4m9!1m2!2m1!1srestaurantes!3m5!1s0xd126d5178eef11d:0x971ff821e0cb903f!8m2!3d37.3847009!4d-6.0041434!15sCgxyZXN0YXVyYW50ZXNaDiIMcmVzdGF1cmFudGVzkgEKcmVzdGF1cmFudJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VObE5EVkRiVFJSUlJBQuABAA?hl=es&authuser=0")}>
       <Text style={styles.link}>Ubicación</Text>
     </TouchableOpacity>
+<<<<<<< HEAD
     <TouchableOpacity onPress={()=>handleCall("955467300")}>
       <Text style={styles.link}>Reserva: Tfno:  955 46 73 00</Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={()=>handleLinkPress("https://www.tripadvisor.com.ar/Restaurant_Review-g187443-d25251121-Reviews-La_Valiente-Seville_Province_of_Seville_Andalucia.html")}>
+=======
+    <TouchableOpacity >
+      <Text style={styles.link}>Reserva: Tfno:  955 46 73 00</Text>
+    </TouchableOpacity>
+    <TouchableOpacity >
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
       <Text style={styles.link}>Estrellas de TripAdvisor</Text>
     </TouchableOpacity>
   </View>
@@ -113,7 +140,11 @@ const Restaurantes = () => {
     <TouchableOpacity onPress={() => handleLinkPress("https://www.google.es/maps/place/Arrocer%C3%ADa+Criaito+Triana/@37.3856463,-6.0032357,15z/data=!4m2!3m1!1s0x0:0x1a797f02f63d895e?sa=X&ved=2ahUKEwiogObB_YuAAxXaiP0HHZo_BdcQ_BJ6BAhOEAA&ved=2ahUKEwiogObB_YuAAxXaiP0HHZo_BdcQ_BJ6BAhqEAg")}>
       <Text style={styles.link}>Ubicación</Text>
     </TouchableOpacity>
+<<<<<<< HEAD
     <TouchableOpacity onPress={()=>handleCall("680708439")}>
+=======
+    <TouchableOpacity onPress={() => handleLinkPress("")}>
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
       <Text style={styles.link}>Reserva: Tfno 680 70 84 39</Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => handleLinkPress("https://www.tripadvisor.es/Restaurant_Review-g187443-d10721760-Reviews-Arroceria_Criaito_Triana-Seville_Province_of_Seville_Andalucia.html")}>
@@ -125,7 +156,11 @@ const Restaurantes = () => {
     <TouchableOpacity onPress={() => handleLinkPress("https://www.google.es/maps/place/Saona+Triana/@37.3829696,-6.0045468,15z/data=!4m2!3m1!1s0x0:0xabbd62ee206cc792?sa=X&ved=2ahUKEwjDzNPe_ouAAxXziv0HHfbnAc0Q_BJ6BAhLEAA&ved=2ahUKEwjDzNPe_ouAAxXziv0HHfbnAc0Q_BJ6BAhhEAg")}>
       <Text style={styles.link}>Ubicación</Text>
     </TouchableOpacity>
+<<<<<<< HEAD
     <TouchableOpacity onPress={()=>handleCall("954667604")}>
+=======
+    <TouchableOpacity onPress={() => handleLinkPress("")}>
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
       <Text style={styles.link}>Reserva: Tfno 954 66 76 04</Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => handleLinkPress("https://www.tripadvisor.es/Restaurant_Review-g187443-d23685089-Reviews-Saona_Triana-Seville_Province_of_Seville_Andalucia.html")}>
@@ -156,6 +191,10 @@ const Restaurantes = () => {
       <Text style={styles.link}>Estrellas de TripAdvisor</Text>
     </TouchableOpacity>
   </View>
+<<<<<<< HEAD
+=======
+
+>>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
   </ScrollView>
 );
 };

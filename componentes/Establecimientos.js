@@ -1,12 +1,9 @@
-import React,{useState} from "react";
-<<<<<<< HEAD
-import { View, Text, StyleSheet,ImageBackground} from "react-native";
-=======
-import { View, Text, StyleSheet,ScrollView} from "react-native";
->>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
+import React,{useState,useEffect} from "react";
+import { View, Text, StyleSheet} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import *as WebBrowser from 'expo-web-browser'
+
 
 const Establecimi = () => {
   const fecha = new Date();
@@ -15,6 +12,9 @@ const Establecimi = () => {
   const año = fecha.getFullYear();
 
   const navigation = useNavigation();
+
+ 
+
 
   const url_cena = `https://www.thefork.es/search?cc=16774-c1d&cityId=506461&date=${año}-0${mes}-${dia}&gclid=CjwKCAjw2K6lBhBXEiwA5RjtCR9RXrvwrakxJqAKcnJ28kd4etMkS5mKIGIx4WTPrKd1WRuf7J32gBoC6tkQAvD_BwE&hour=1290&partySize=2&restaurantTagId[]=1062&timezone=Europe%2FMadrid`;
   const url_comida = `https://www.thefork.es/search?cc=16774-c1d&cityId=506461&date=${año}-0${mes}-${dia}&gclid=CjwKCAjw2K6lBhBXEiwA5RjtCR9RXrvwrakxJqAKcnJ28kd4etMkS5mKIGIx4WTPrKd1WRuf7J32gBoC6tkQAvD_BwE&hour=840&partySize=2&restaurantTagId[]=1062&timezone=Europe%2FMadrid`;
@@ -31,8 +31,10 @@ const Establecimi = () => {
   
 
   return (
+    
     <View style={styles.container}>
      
+      
       <View style={styles.hora}>
         <Text style={styles.texto}>
           Antes de entrar en materia, puedes consultar en "thefork.es" la disponibilidad para hoy:
@@ -53,12 +55,9 @@ const Establecimi = () => {
           <Text style={styles.link}>RESTAURANTES</Text>
         </TouchableOpacity>
       </View>
-<<<<<<< HEAD
       
     </View>
-=======
-      </View>
->>>>>>> e9a41cc9e182331801929f47ec5cf51ea361bbb5
+    
   );
 };
  

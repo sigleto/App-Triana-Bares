@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { View, Text, StyleSheet} from "react-native";
+import { View, Text, StyleSheet,ImageBackground} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import *as WebBrowser from 'expo-web-browser'
@@ -28,6 +28,7 @@ const Establecimi = () => {
 
   return (
     <View style={styles.container}>
+     
       <View style={styles.hora}>
         <Text style={styles.texto}>
           Antes de entrar en materia, puedes consultar en "thefork.es" la disponibilidad para hoy:
@@ -48,6 +49,7 @@ const Establecimi = () => {
           <Text style={styles.link}>RESTAURANTES</Text>
         </TouchableOpacity>
       </View>
+      
     </View>
   );
 };
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 16,
-    backgroundColor:'#f6f6e2'
+    backgroundColor:'#f4d03f'
   },
   hora: {
     marginBottom: 16,
@@ -67,7 +69,7 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   heading: {
-    fontSize: 18,
+    fontSize: 25,
     fontWeight: "bold",
     marginBottom: 8,
     marginTop:50
@@ -76,7 +78,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   link: {
-    fontSize: 16,
+    fontSize: 20,
     color: "blue",
     textDecorationLine: "underline",
     marginTop:20,
@@ -84,10 +86,12 @@ const styles = StyleSheet.create({
     
   },
   texto:{
-    fontSize:17,
+    fontSize:19,
     marginTop:-100,
-    textAlign: 'justify'
-  } 
+    textAlign: 'justify',
+    fontWeight:700
+  } ,
+ 
 });
 
 export default Establecimi;

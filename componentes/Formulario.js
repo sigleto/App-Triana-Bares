@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet,Image } from "react-native";
 import { useForm, Controller } from "react-hook-form";
-
+import { useNavigation } from "@react-navigation/native";
 
 const Formulario = () => {
   const { control, handleSubmit, reset, formState: { errors } } = useForm();
   const [seleccion,setSeleccion]=useState(null)
+  const navigation=useNavigation() 
   const accion = async (datos) => {
     try {
       await fetch("https://pagina-react-para-vercel.vercel.app/formulario", {
@@ -16,7 +17,8 @@ const Formulario = () => {
       });
       console.log("Datos enviados correctamente");
       reset();
-      
+      navigation.navigate("Home")
+      setSeleccion(null); // Resetear el estilo del radioButtonSelected
     } catch (error) {
       console.log("Error al enviar los datos:", error);
     } 
@@ -24,6 +26,7 @@ const Formulario = () => {
 
   return (
     <>
+   
       <View style={styles.container}>
         <View style={styles.formulario}>
           <View style={styles.campos}>
@@ -68,7 +71,7 @@ const Formulario = () => {
                     styles.radioButton,
                     seleccion === "restaurantes" && styles.radioButtonSelected,
                   ]} >
-                    <Text style={styles.separo}>Restaurantes y cosas finas</Text>
+                    <Text style={styles.separo}>Restaurantes y similares</Text>
                   </TouchableOpacity>
                 )}
                 name="preferencias"
@@ -100,7 +103,7 @@ const Formulario = () => {
               control={control}
               render={({ field: { onChange, onBlur, value } }) => (
                 <TextInput style={styles.comentarios}
-                  placeholder="Puedes enviar un establecimiento que deseas que incluya. Solo escribe el nombre"
+                  placeholder="Puedes enviar el nombre un establecimiento que deseas que se incluya."
                   onBlur={onBlur}
                   onChangeText={onChange}
                   value={value}
@@ -118,24 +121,28 @@ const Formulario = () => {
           {errors.correo?.type === "pattern" && <View><Text>Eso no es un correo válido</Text></View>}
           {errors.preferencias?.type === "required" && <View><Text>Por favor, elige una preferencia</Text></View>}
         </View>
-       
+        <Image style={styles.imagen} source={require('../assets/pulpo.jpg')} />
       </View>
+      
     </>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+   
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
     backgroundColor: "#ffebcd",
-    
+ 
+   
   },
   formulario: {
-   
-   padding:10
+   marginTop:70,
+   marginBottom:50
+  
+  
     
   },
   campos: {
@@ -191,7 +198,7 @@ const styles = StyleSheet.create({
   },
   comentarios:{
     backgroundColor:"#f0f8ff",
-    height:50},
+    height:60},
   enunciados:{
       fontSize:17
     },
@@ -199,7 +206,13 @@ const styles = StyleSheet.create({
       color:"blue",
       marginTop:10
 
+    },
+    imagen:{
+      width: 280,
+      height: 160,
+     marginBottom:60
     }
+
 
    
 });

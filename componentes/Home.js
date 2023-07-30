@@ -15,11 +15,11 @@ const Home = () => {
       </View>
       <View style={styles.parrafo}>
         <Text style={styles.per}>
-          Esta página contiene una relación de establecimientos gastronómicos distribuidos en las categorías de "BARES" y "RESTAURANTES". La principal diferencia entre ambas es que en todos los sitios incluidos como restaurantes se puede reservar. Ello no quiere decir que también lo puedas hacer en algunos bares.
+          Relación de establecimientos gastronómicos distribuidos en las categorías de "BARES" y "RESTAURANTES". La principal diferencia entre ambas es que en todos los sitios incluidos como restaurantes se puede reservar. Ello no quiere decir que también lo puedas hacer en algunos bares.
           Así mismo, en los todos los establecimientos catalogados como bares, se pueden pedir tapas, lo que, tampoco implica que en algunos restaurantes también te las sirvan.
           En la sección  <TouchableOpacity onPress={() => navigation.navigate("Formulario")}>
         <Text style={styles.link}> Contacto </Text>
-      </TouchableOpacity> me puedes dejar algún establecimiento que eches de menos en la relación y lo incluiré sin problema.
+      </TouchableOpacity> puedes proponer algún establecimiento que deseas que se incluya.
         </Text>
       </View>
       

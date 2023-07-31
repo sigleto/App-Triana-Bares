@@ -24,7 +24,6 @@ const Bares = () => {
               if (item.reserva.includes("95")){handleCall(item.reserva)}
               else if  (item.reserva.includes("https")){handleLinkPress(item.reserva) }           }}>
               <Text style={styles.link}>Reserva una mesa</Text>
-             
             </TouchableOpacity>
           )}
           <TouchableOpacity onPress={() => handleLinkPress(item.estrellas)}>

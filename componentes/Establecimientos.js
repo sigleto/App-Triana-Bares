@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 16,
-    backgroundColor:'#e5f7f6'
+    backgroundColor:'#faf9ec'
   },
   hora: {
     marginBottom: 16,

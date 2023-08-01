@@ -17,6 +17,7 @@ const Stack = createStackNavigator();
 function EstablecimientosStack() {
   return (
     <Stack.Navigator>
+      
       <Stack.Screen name="Establecimientos" component={Establecimi} />
       <Stack.Screen name="Bares" component={Bares} />
       <Stack.Screen name="Restaurantes" component={Restaurantes} />
@@ -25,12 +26,8 @@ function EstablecimientosStack() {
 }
 
 function MyTabs() {
-
-
   return (
-    <Tab.Navigator 
-   
-    >
+    <Tab.Navigator >
       
       <Tab.Screen 
         name="Home"
@@ -44,7 +41,7 @@ function MyTabs() {
       />
 
       <Tab.Screen
-        name="Establecimientos"
+        name="Locales"
         component={EstablecimientosStack}
         options={{
           tabBarLabel: "Establecimientos",

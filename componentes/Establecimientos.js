@@ -28,6 +28,11 @@ const Establecimi = () => {
    {await WebBrowser.openBrowserAsync(url_cena)};
    
 
+   useEffect(() => {
+    navigation.setOptions({
+      headerShown: false, // Ocultar la barra de navegación en la pantalla Establecimi
+    });
+  }, []);
   
 
   return (
@@ -37,7 +42,7 @@ const Establecimi = () => {
       
       <View style={styles.hora}>
         <Text style={styles.texto}>
-          Antes de entrar en materia, puedes consultar en "thefork.es" la disponibilidad para hoy:
+          Antes de entrar en materia, puedes consultar en "thefork.es" la disponibilidad para hoy en Triana:
         </Text>
         <TouchableOpacity onPress={handleComidaPress}>
           <Text style={styles.link}>Con disponibilidad para comida</Text>
@@ -67,10 +72,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 16,
-    backgroundColor:'#f4d03f'
+    backgroundColor:'#e5f7f6'
   },
   hora: {
     marginBottom: 16,
+    marginTop:70
   },
   disponible: {
     marginVertical: 8,
@@ -79,10 +85,12 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     marginBottom: 8,
-    marginTop:50
+    marginTop:70
   },
   lista: {
     alignItems: "center",
+    marginTop:30,
+    
   },
   link: {
     fontSize: 20,

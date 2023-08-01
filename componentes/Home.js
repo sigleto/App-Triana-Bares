@@ -15,9 +15,10 @@ const Home = () => {
       </View>
       <View style={styles.parrafo}>
         <Text style={styles.per}>
-          Relación de establecimientos gastronómicos distribuidos en las categorías de "BARES" y "RESTAURANTES". La principal diferencia entre ambas es que en todos los sitios incluidos como restaurantes se puede reservar. Ello no quiere decir que también lo puedas hacer en algunos bares.
-          Así mismo, en los todos los establecimientos catalogados como bares, se pueden pedir tapas, lo que, tampoco implica que en algunos restaurantes también te las sirvan.
-          En la sección  <TouchableOpacity onPress={() => navigation.navigate("Formulario")}>
+        Aquí tienes una lista de establecimientos gastronómicos ubicados en TRIANA, categorizados como "BARES" y "RESTAURANTES".
+        Todos los restaurantes de la lista aceptan reservas, aunque no todos los bares lo hacen.
+        Además, todos los lugares catalogados como bares ofrecen tapas, mientras que algunos restaurantes también las sirven
+        En la sección  <TouchableOpacity onPress={() => navigation.navigate("Formulario")}>
         <Text style={styles.link}> Contacto </Text>
       </TouchableOpacity> puedes proponer algún establecimiento que deseas que se incluya.
         </Text>

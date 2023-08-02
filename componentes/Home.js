@@ -18,9 +18,9 @@ const Home = () => {
         Aquí tienes una lista de establecimientos gastronómicos ubicados en TRIANA, categorizados como "BARES" y "RESTAURANTES".
         Todos los restaurantes de la lista aceptan reservas, aunque no todos los bares lo hacen.
         Además, todos los lugares catalogados como bares ofrecen tapas, mientras que algunos restaurantes también las sirven
-        En la sección  <TouchableOpacity onPress={() => navigation.navigate("Formulario")}>
-        <Text style={styles.link}> Contacto </Text>
-      </TouchableOpacity> puedes proponer algún establecimiento que deseas que se incluya.
+        En la sección   <TouchableOpacity onPress={() => navigation.navigate("Formulario")}>
+        <Text style={styles.link}>  Contacto </Text>
+      </TouchableOpacity>  puedes proponer algún establecimiento que deseas que se incluya.
         </Text>
       </View>
       

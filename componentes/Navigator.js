@@ -2,8 +2,8 @@ import React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-
+import { MaterialCommunityIcons,MaterialIcons } from "@expo/vector-icons";
+import { StyleSheet } from "react-native";
 
 import Home from '../componentes/Home';
 import Establecimi from "../componentes/Establecimientos";
@@ -27,7 +27,7 @@ function EstablecimientosStack() {
 
 function MyTabs() {
   return (
-    <Tab.Navigator >
+    <Tab.Navigator  >
       
       <Tab.Screen 
         name="Home"
@@ -46,8 +46,8 @@ function MyTabs() {
         options={{
           tabBarLabel: "Establecimientos",
           tabBarIcon: () => (
-            <MaterialCommunityIcons
-              name="store"
+            <MaterialIcons
+              name="restaurant"
               
               size={26}
             />
@@ -61,7 +61,7 @@ function MyTabs() {
         options={{
           tabBarLabel: "Contacto",
           tabBarIcon: () => (
-            <MaterialCommunityIcons name="file-document-outline"  size={26} />
+            <MaterialCommunityIcons name="contacts"  size={26} />
           ),
         }}
       />

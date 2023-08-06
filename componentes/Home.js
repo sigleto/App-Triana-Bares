@@ -1,12 +1,40 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
-
+import Reloj from "../anexos/reloj";
+import { Audio } from "expo-av";
 const Home = () => {
 
   const navigation = useNavigation();
 
+  //Para el sonido:
+  const [sound, setSound] = useState();
+
+  async function playSound() {
+    console.log('Sonando');
+    const { sound } = await Audio.Sound.createAsync( require('../assets/bensound-sunny.mp3')
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+    await sound.setVolumeAsync(0.4);
+  }
+
+  useEffect(() => {
+    // Reproducir el sonido al entrar en el componente
+    playSound();
+
+    // Limpiar al salir del componente
+    return () => {
+      if (sound) {
+        console.log('Silenciando');
+        sound.unloadAsync();
+      }
+    };
+  }, []);
+
+  
   return (
     <View style={styles.container}>
       <View style={styles.imagenes}>
@@ -23,7 +51,7 @@ const Home = () => {
       </TouchableOpacity>  puedes proponer algún establecimiento que deseas que se incluya.
         </Text>
       </View>
-      
+      <Reloj/>
     </View>
   );
 };

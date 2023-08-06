@@ -30,7 +30,7 @@ const Formulario = () => {
       <View style={styles.container}>
         <View style={styles.formulario}>
           <View style={styles.campos}>
-            <Text style={styles.enunciados}>Alias</Text>
+            <Text style={styles.enunciados}>*Alias</Text>
             <Controller
               control={control}
               render={({ field: { onChange, onBlur, value } }) => (
@@ -61,7 +61,7 @@ const Formulario = () => {
                   </TouchableOpacity>
                 )}
                 name="preferencias"
-                rules={{ required: true }}
+                
                 defaultValue=""
               />
               <Controller
@@ -75,7 +75,7 @@ const Formulario = () => {
                   </TouchableOpacity>
                 )}
                 name="preferencias"
-                rules={{ required: true }}
+                
                 defaultValue=""
               />
             </View>
@@ -114,6 +114,7 @@ const Formulario = () => {
               defaultValue=""
             />
           </View>
+          <Text>El campo "Alias" es obligatorio</Text>
           <TouchableOpacity style={styles.botonEnviar} onPress={handleSubmit(accion)}>
             <Text style={styles.submitText}>ENVIAR DATOS</Text>
           </TouchableOpacity>
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
    
   },
   formulario: {
-   marginTop:70,
+   marginTop:100,
    marginBottom:50
   
   
@@ -158,7 +159,9 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   radioButtonSelected: {
-    backgroundColor: "#7fffd4", // Add your selected color here
+    backgroundColor: "#73f955", // Add your selected color here
+    maxWidth:'60%',
+    fontSize:15
   },
   input: {
     borderWidth: 1,
@@ -204,7 +207,8 @@ const styles = StyleSheet.create({
     },
     separo:{
       color:"blue",
-      marginTop:10
+      marginTop:10,
+      fontSize:15
 
     },
     imagen:{

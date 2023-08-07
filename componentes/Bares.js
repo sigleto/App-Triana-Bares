@@ -45,7 +45,7 @@ const Bares = () => {
                 {item.reserva && (
                   <TouchableOpacity
                     onPress={() => {
-                      if (item.reserva.includes("95")) {
+                      if (item.reserva.includes("95")||item.reserva.includes("6")) {
                         handleCall(item.reserva);
                       } else if (item.reserva.includes("https")) {
                         handleLinkPress(item.reserva);

@@ -10,6 +10,10 @@ import nueve from './locales/ArroceriaCriaito.jpg'
 import diez from './locales/Sahona.jpg'
 import once from './locales/AsadorAtahualpa.jpg'
 import doce from './locales/CasaLuciano.jpg'
+import trece from './locales/PuertaPrincipe.jpg'
+import catorce from './locales/AbadesTriana.jpg'
+import quince from './locales/Betis7.jpg'
+
 
 import one from './locales/Alboroque.jpg'
 import two from './locales/LasGolondrinas2.jpg'
@@ -24,6 +28,11 @@ import ten from './locales/Gascona.jpg'
 import eleven from './locales/SolySombra.jpg'
 import twelve from './locales/CasaRemesal.jpg'
 import thirteen from './locales/elZero10.jpg'
+import fourteen from './locales/Trianilla.jpg'
+import fiveteen from './locales/Puratasca.jpg'
+import sixteen from './locales/Casimiro.jpg'
+import seventeen from './locales/Salomon.jpg'
+import eightteen from './locales/Tipico.jpg'
 
 
 
@@ -44,7 +53,14 @@ export const barecillos=[{nombre:'LA PARRALA',ubicacion:"https://www.google.es/m
 {nombre:'GASCONA',ubicacion:"https://www.google.es/maps/place/Gascona/@37.3867464,-6.0048046,15z/data=!4m2!3m1!1s0x0:0x4ec5e366e3ccb3fa?sa=X&ved=2ahUKEwjrkPqV6IqAAxVCTqQEHYEkDuIQ_BJ6BAhPEAA&ved=2ahUKEwjrkPqV6IqAAxVCTqQEHYEkDuIQ_BJ6BAhjEAg",reserva:"https://www.thefork.es/restaurante/gascona-r726404#date=2023-07-13&hour=1230&partySize=2",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d23788283-Reviews-Gascona-Seville_Province_of_Seville_Andalucia.html",imagen:ten},
 {nombre:'SOL Y SOMBRA',ubicacion:"https://www.google.com/maps/place/Taberna+Sol+y+Sombra/@37.3891339,-6.0124763,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c6e0b1d1e67:0x1442a5b988d62cd1!8m2!3d37.3891297!4d-6.0099014!16s%2Fg%2F1tg87xv7?authuser=0&entry=ttu",reserva:"https://www.thefork.es/restaurante/sol-y-sombra-r17946#date=2023-07-13&hour=1260&partySize=2",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d1153685-Reviews-Sol_y_Sombra-Seville_Province_of_Seville_Andalucia.html",imagen:eleven},
 {nombre:'CASA REMESAL',ubicacion:"https://www.google.es/maps/place/Bar+Casa+Remesal/@37.3837026,-6.0009529,15z/data=!4m2!3m1!1s0x0:0xd1d4aff642c0d6fe?sa=X&ved=2ahUKEwiF3Kyd6oqAAxWzVaQEHa01Af0Q_BJ6BAhOEAA&ved=2ahUKEwiF3Kyd6oqAAxWzVaQEHa01Af0Q_BJ6BAhgEAg",reserva:"608615846",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d2341423-Reviews-Casa_Remesal-Seville_Province_of_Seville_Andalucia.html",imagen:twelve},
-{nombre:'EL ZERO 10',ubicacion:"https://www.google.com/maps/place/El+Zero10/@37.3809224,-6.0079922,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c6ac82eabf1:0xaec18fbd2ce9ccde!8m2!3d37.3809182!4d-6.0054173!16s%2Fg%2F11b7lplp84?authuser=0&entry=ttu",reserva:"https://elzero10.com/reservas/",estrellas:"https://www.tripadvisor.es/LocationPhotoDirectLink-g187443-d8084486-i237736940-41cero10-Seville_Province_of_Seville_Andalucia.html",imagen:thirteen}]
+{nombre:'EL ZERO 10',ubicacion:"https://www.google.com/maps/place/El+Zero10/@37.3809224,-6.0079922,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c6ac82eabf1:0xaec18fbd2ce9ccde!8m2!3d37.3809182!4d-6.0054173!16s%2Fg%2F11b7lplp84?authuser=0&entry=ttu",reserva:"https://elzero10.com/reservas/",estrellas:"https://www.tripadvisor.es/LocationPhotoDirectLink-g187443-d8084486-i237736940-41cero10-Seville_Province_of_Seville_Andalucia.html",imagen:thirteen},
+{nombre:'TRIANILLA',ubicacion:"https://www.google.es/maps/place/Trianilla/@37.3862314,-6.0118999,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c6c18da0041:0x8c6a5bc8dfc48234!8m2!3d37.3862272!4d-6.009325!16s%2Fg%2F11ckqt0pc4?entry=ttu",reserva:"675808839",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d7675897-Reviews-Trianilla-Seville_Province_of_Seville_Andalucia.html",imagen:fourteen},
+{nombre:'PURATASCA',ubicacion:"https://www.google.es/maps/place/Puratasca/@37.3866041,-6.015083,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c6e99762dbf:0xb600f83aba3f51d4!8m2!3d37.3865999!4d-6.0102121!16s%2Fg%2F1hhjssf1k?entry=ttu",reserva:"954331621",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d1723038-Reviews-Puratasca-Seville_Province_of_Seville_Andalucia.html",imagen:fiveteen},
+{nombre:'CASIMIRO',ubicacion:"https://www.google.es/maps/place/Bar+Casa+Casimiro/@37.3809533,-6.0141782,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c69b8f83aff:0xa93e6705a3593a9b!8m2!3d37.3809491!4d-6.0116033!16s%2Fg%2F1tvq5csn?entry=ttu",reserva:"954341269",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d7611361-Reviews-Casa_Casimiro-Seville_Province_of_Seville_Andalucia.html",imagen:sixteen},
+{nombre:'SALOMON',ubicacion:"https://www.google.es/maps/place/Bar+Salom%C3%B3n+Rey+de+los+Pinchitos/@37.3798752,-6.0109989,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c6a0ac349c7:0x7ca98c888b90c8f7!8m2!3d37.379871!4d-6.008424!16s%2Fg%2F1w3w48p7?entry=ttu",reserva:"954333521",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d7256349-Reviews-Salomon_El_Rey_de_Los_Pinchitos-Seville_Province_of_Seville_Andalucia.html",imagen:seventeen},
+{nombre:'TIPICO',ubicacion:"https://www.google.es/maps/place/Bar+T%C3%ADpico+barra+de+tapas/@37.3837241,-6.0078168,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c6b3926aaab:0xe06793a577097e84!8m2!3d37.3837199!4d-6.0052419!16s%2Fg%2F11hcdt8_zz?entry=ttu",reserva:"955704941",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d13564282-Reviews-Tipico_Barra_De_Tapas-Seville_Province_of_Seville_Andalucia.html",imagen:eightteen},
+
+]
 
 
 export const restaurancillos=[{nombre:"VICTORIA 8",ubicacion:"https://www.google.es/maps/place/Restaurante+Victoria+8/@37.3830354,-6.0025717,15z/data=!4m5!3m4!1s0x0:0x8f72e73773904258!8m2!3d37.3830832!4d-6.0027072",reserva:"https://module.thefork.com/es_ES/module/21282-fa7d6/9390-6aa?tracking_id=a93bf61a-ad12-4368-aa70-2740bd12da88",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d2261643-Reviews-Victoria_8-Seville_Province_of_Seville_Andalucia.html",imagen:uno},
@@ -58,4 +74,9 @@ export const restaurancillos=[{nombre:"VICTORIA 8",ubicacion:"https://www.google
 {nombre:"ARROCERÍA CRIAÍTO",ubicacion:"https://www.google.es/maps/place/Arrocer%C3%ADa+Criaito+Triana/@37.3856463,-6.0032357,15z/data=!4m2!3m1!1s0x0:0x1a797f02f63d895e?sa=X&ved=2ahUKEwiogObB_YuAAxXaiP0HHZo_BdcQ_BJ6BAhOEAA&ved=2ahUKEwiogObB_YuAAxXaiP0HHZo_BdcQ_BJ6BAhqEAg",reserva:"680 70 84 39",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d10721760-Reviews-Arroceria_Criaito_Triana-Seville_Province_of_Seville_Andalucia.html",imagen:nueve},
 {nombre:"SAHONA TRIANA",ubicacion:"https://www.google.es/maps/place/Saona+Triana/@37.3829696,-6.0045468,15z/data=!4m2!3m1!1s0x0:0xabbd62ee206cc792?sa=X&ved=2ahUKEwjDzNPe_ouAAxXziv0HHfbnAc0Q_BJ6BAhLEAA&ved=2ahUKEwjDzNPe_ouAAxXziv0HHfbnAc0Q_BJ6BAhhEAg",reserva:"954 66 76 04",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d23685089-Reviews-Saona_Triana-Seville_Province_of_Seville_Andalucia.html",imagen:diez},
 {nombre:"ASADOR ATAHUALPA",ubicacion:"https://www.google.es/maps/place/Atahualpa/@37.3789583,-6.0009944,15z/data=!4m2!3m1!1s0x0:0x95cb20765fe398b?sa=X&ved=2ahUKEwjJxubm_4uAAxWWtqQKHZgKAR8Q_BJ6BAhHEAA&ved=2ahUKEwjJxubm_4uAAxWWtqQKHZgKAR8Q_BJ6BAhoEAg",reserva:"https://www.thefork.es/restaurante/parrilla-argentina-atahualpa-r14396",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d4433546-Reviews-Atahualpa-Seville_Province_of_Seville_Andalucia.html",imagen:once},
-{nombre:"MESÓN CASA LUCIANO",ubicacion:"https://www.google.es/maps/place/Mes%C3%B3n+Casa+Luciano/@37.3794444,-6.0008333,15z/data=!4m2!3m1!1s0x0:0x8fc31191f572feeb?sa=X&ved=2ahUKEwigg8jKgIyAAxXLGewKHbRgCrQQ_BJ6BAhLEAA&ved=2ahUKEwigg8jKgIyAAxXLGewKHbRgCrQQ_BJ6BAhlEAg",reserva:"https://www.thefork.es/restaurante/meson-casa-luciano-r36392",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d3876780-Reviews-Meson_Casa_Luciano-Seville_Province_of_Seville_Andalucia.html",imagen:doce}]
+{nombre:"MESÓN CASA LUCIANO",ubicacion:"https://www.google.es/maps/place/Mes%C3%B3n+Casa+Luciano/@37.3794444,-6.0008333,15z/data=!4m2!3m1!1s0x0:0x8fc31191f572feeb?sa=X&ved=2ahUKEwigg8jKgIyAAxXLGewKHbRgCrQQ_BJ6BAhLEAA&ved=2ahUKEwigg8jKgIyAAxXLGewKHbRgCrQQ_BJ6BAhlEAg",reserva:"https://www.thefork.es/restaurante/meson-casa-luciano-r36392",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d3876780-Reviews-Meson_Casa_Luciano-Seville_Province_of_Seville_Andalucia.html",imagen:doce} ,   
+{nombre:"PUERTA PRINCIPE",ubicacion:"https://www.google.es/maps/place/Puerta+Pr%C3%ADncipe+Food+%26+Events/@37.3747837,-6.0110044,17z/data=!3m1!4b1!4m6!3m5!1s0xd126d5355a6902d:0x9337964ba66d907d!8m2!3d37.3747795!4d-6.0084295!16s%2Fg%2F11q3x4r8vq?entry=ttu",reserva:"https://www.thefork.es/restaurante/puerta-principe-r48154",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d4988759-Reviews-Puerta_Principe-Seville_Province_of_Seville_Andalucia.html",imagen:trece} ,   
+{nombre:"ABADES TRIANA",ubicacion:"https://www.google.es/maps/place/Abades+Triana+Restaurante/@37.3816563,-6.0005782,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c1617df1ec3:0xaf465df648afc9d2!8m2!3d37.3816521!4d-5.9980033!16s%2Fg%2F1tfs29_b?entry=ttu",reserva:"https://www.thefork.es/restaurante/abades-triana-r3446",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d1178171-Reviews-Abades_Triana-Seville_Province_of_Seville_Andalucia.html",imagen:catorce} ,   
+{nombre:"BETIS 7",ubicacion:"https://www.google.es/maps/place/Betis+7+Triana+Experience+Restaurant/@37.3850643,-6.0048583,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c1484818add:0xda5f79aaa946344c!8m2!3d37.3850601!4d-6.0022834!16s%2Fg%2F11f4v4b63z?entry=ttu",reserva:"https://www.thefork.es/restaurante/betis-7-triana-experience-r558027",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d13940052-Reviews-Betis_7_Triana_Experience-Seville_Province_of_Seville_Andalucia.html",imagen:quince}  
+ 
+]

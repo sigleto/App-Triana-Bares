@@ -20,7 +20,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/centollo.png",
+        "foregroundImage": "./assets/cangrejo.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.sigleto.probando"

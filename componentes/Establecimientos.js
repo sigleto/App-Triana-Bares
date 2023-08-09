@@ -1,8 +1,9 @@
-import React,{useState,useEffect} from "react";
-import { View, Text, StyleSheet} from "react-native";
+import React,{useState,useEffect,useRef} from "react";
+import { View, Text, StyleSheet,Button} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import *as WebBrowser from 'expo-web-browser'
+import LottieView from 'lottie-react-native';
 
 
 const Establecimi = () => {
@@ -52,6 +53,15 @@ const Establecimi = () => {
         </TouchableOpacity>
       </View>
       <Text style={styles.heading}>Elige categoría:</Text>
+      <View style={styles.animationContainer}>
+      <LottieView
+       source={require('../assets/tenedores1.json')} // Reemplaza con la ruta a tu archivo de animación Lottie
+       autoPlay
+       loop
+       style={styles.animation}
+        />
+      </View>
+
       <View style={styles.lista}>
         <TouchableOpacity onPress={() => navigation.navigate("Bares")}>
           <Text style={styles.link}>BARES</Text>
@@ -60,7 +70,8 @@ const Establecimi = () => {
           <Text style={styles.link}>RESTAURANTES</Text>
         </TouchableOpacity>
       </View>
-      
+
+  
     </View>
     
   );
@@ -76,7 +87,7 @@ const styles = StyleSheet.create({
   },
   hora: {
     marginBottom: 16,
-    marginTop:70
+    marginTop:130
   },
   disponible: {
     marginVertical: 8,
@@ -106,7 +117,25 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     fontWeight:700
   } ,
- 
+
+  box: {
+    width: 100,
+    height: 80,
+    backgroundColor: 'black',
+    margin: 30,
+  },
+  animationContainer: {
+    backgroundColor: '#fff',    
+    
+    width: '50%', // Ajusta el ancho del contenedor
+    height: '25%', // Ajusta la altura del contenedor
+  
+  },
+  
+  animation: {
+    width: 200, // Ajusta el ancho de la animación
+    height: 200, // Ajusta la altura de la animación
+  },
 });
 
 export default Establecimi;

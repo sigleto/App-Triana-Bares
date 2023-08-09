@@ -11,14 +11,14 @@ const Home = () => {
   const [sound, setSound] = useState();
 
   async function playSound() {
-    console.log('Sonando');
-    const { sound } = await Audio.Sound.createAsync( require('../assets/melodia.mp4')
+    
+    const { sound } = await Audio.Sound.createAsync( require('../assets/bensound-sunny.mp3')
     );
     setSound(sound);
 
     console.log('Playing Sound');
     await sound.playAsync();
-    await sound.setVolumeAsync(0.4);
+    await sound.setVolumeAsync(0.1);
     await sound.setIsLoopingAsync(true);
   }
 

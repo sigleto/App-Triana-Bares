@@ -30,7 +30,7 @@ const Formulario = () => {
       <View style={styles.container}>
         <View style={styles.formulario}>
           <View style={styles.campos}>
-            <Text style={styles.enunciados}>*Alias</Text>
+            <Text style={styles.enunciados}>Alias</Text>
             <Controller
               control={control}
               render={({ field: { onChange, onBlur, value } }) => (
@@ -42,10 +42,10 @@ const Formulario = () => {
                 />
               )}
               name="alias"
-              rules={{ required: true }}
+              
               defaultValue=""
             />
-          </View>
+              </View>
           <View style={styles.preferencias}>
             <Text style={styles.enunciados}
             >Preferencias</Text>
@@ -86,7 +86,7 @@ const Formulario = () => {
               control={control}
               render={({ field: { onChange, onBlur, value } }) => (
                 <TextInput style={styles.relleno}
-                  placeholder="Introduce tu email"
+                  placeholder="Solo si quieres que te contestemos"
                   onBlur={onBlur}
                   onChangeText={onChange}
                   value={value}
@@ -95,7 +95,7 @@ const Formulario = () => {
               name="correo"
               rules={{ pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/ }}
               defaultValue=""
-            />
+            /> 
           </View>
           <View style={styles.campos}>
             <Text style={styles.enunciados}>COMENTARIOS</Text>
@@ -114,7 +114,7 @@ const Formulario = () => {
               defaultValue=""
             />
           </View>
-          <Text>El campo "Alias" es obligatorio</Text>
+        
           <TouchableOpacity style={styles.botonEnviar} onPress={handleSubmit(accion)}>
             <Text style={styles.submitText}>ENVIAR DATOS</Text>
           </TouchableOpacity>

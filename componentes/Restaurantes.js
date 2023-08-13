@@ -72,17 +72,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#f6f6e2',
+    backgroundColor: '#d7d03d',
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 16,
+    height:90
+
+    
   },
   textInput: {
     flex: 1,
     height: 40,
-    backgroundColor: "#f4e93f",
+    backgroundColor: "#f9f8d7",
     borderWidth: 1,
     marginRight: 10,
     paddingHorizontal: 10,
@@ -107,6 +110,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "blue",
     textDecorationLine: "underline",
+    padding:3
   },
   imagen: {
     width: 150,

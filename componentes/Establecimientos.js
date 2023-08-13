@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 16,
-    backgroundColor:'#faf9ec'
+    backgroundColor:'#e8d182'
   },
   hora: {
     marginBottom: 16,
@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
     color: "blue",
     textDecorationLine: "underline",
     marginTop:20,
+    padding:3
   
     
   },

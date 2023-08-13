@@ -32,7 +32,7 @@ const Reloj = () => {
 
   return (
     <View>
-      <TextInput style={styles.reloj} value={time} />
+      <TextInput style={styles.reloj} value={time}accessibilityLabel="Reloj en tiempo real" />
     </View>
   );
 };

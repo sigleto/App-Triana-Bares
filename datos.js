@@ -14,6 +14,10 @@ import trece from './locales/PuertaPrincipe.jpg'
 import catorce from './locales/AbadesTriana.jpg'
 import quince from './locales/Betis7.jpg'
 import dieciseis from './locales/LaEstacion.jpg'
+import diecisiete from './locales/Jaylu.jpg'
+import dieciocho from './locales/LosCuevas.jpg'
+import diecinueve from './locales/JoseLuis.jpg'
+import veinte from './locales/RioGrande.jpg'
 
 
 import one from './locales/Alboroque.jpg'
@@ -35,6 +39,11 @@ import sixteen from './locales/Casimiro.jpg'
 import seventeen from './locales/Salomon.jpg'
 import eightteen from './locales/Tipico.jpg'
 import nineteen from './locales/JuanCarlos.jpg'
+import twenty from './locales/CasaOliva.jpg'
+import twentyone from './locales/LaCocinadelTraca.jpg'
+import twentytwo from './locales/Brutal.jpg'
+import twentythree from './locales/Tribuna.jpg'
+import twentyfour from './locales/LaGrande.jpg'
 
 
 
@@ -62,7 +71,11 @@ export const barecillos=[{nombre:'LA PARRALA',ubicacion:"https://www.google.es/m
 {nombre:'SALOMON',ubicacion:"https://www.google.es/maps/place/Bar+Salom%C3%B3n+Rey+de+los+Pinchitos/@37.3798752,-6.0109989,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c6a0ac349c7:0x7ca98c888b90c8f7!8m2!3d37.379871!4d-6.008424!16s%2Fg%2F1w3w48p7?entry=ttu",reserva:"954333521",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d7256349-Reviews-Salomon_El_Rey_de_Los_Pinchitos-Seville_Province_of_Seville_Andalucia.html",imagen:seventeen},
 {nombre:'TIPICO',ubicacion:"https://www.google.es/maps/place/Bar+T%C3%ADpico+barra+de+tapas/@37.3837241,-6.0078168,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c6b3926aaab:0xe06793a577097e84!8m2!3d37.3837199!4d-6.0052419!16s%2Fg%2F11hcdt8_zz?entry=ttu",reserva:"955704941",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d13564282-Reviews-Tipico_Barra_De_Tapas-Seville_Province_of_Seville_Andalucia.html",imagen:eightteen},
 {nombre:'JUAN CARLOS',ubicacion:"https://www.google.es/maps/place/Bar+Juan+Carlos/@37.3807272,-6.0086043,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c154f9fb683:0x4e2d239e84dfbc8d!8m2!3d37.380723!4d-6.0037334!16s%2Fg%2F1pp2wwvb5?entry=ttu",reserva:"",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d6575480-Reviews-Bar_Juan_Carlos-Seville_Province_of_Seville_Andalucia.html",imagen:nineteen},
-
+{nombre:"CASA OLIVA",ubicacion:"https://www.google.com/maps/place/Casa+Oliva/@37.3825191,-6.0093192,17z/data=!3m1!4b1!4m6!3m5!1s0xd126d704239b74d:0x9b36f680a3f82563!8m2!3d37.3825149!4d-6.0067443!16s%2Fg%2F11kb0ytcl1?authuser=0&entry=ttu",reserva:"607227124",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d5771340-Reviews-Bar_oliva-Seville_Province_of_Seville_Andalucia.html",imagen:twenty} ,
+{nombre:"LA COCINA DEL TRACA",ubicacion:"https://www.google.com/maps/place/LA+COCINA+DEL+TRACA/@37.3796332,-6.0062844,17z/data=!3m1!4b1!4m6!3m5!1s0xd126d5165ef8507:0xb7ab8967105fcce1!8m2!3d37.379629!4d-6.0037095!16s%2Fg%2F11jksmzzcx?authuser=0&entry=ttu",reserva:"954339082",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d21205481-Reviews-La_Cocina_Del_Traca-Seville_Province_of_Seville_Andalucia.html",imagen:twentyone} ,
+{nombre:"BRUTAL",ubicacion:"https://www.google.com/maps/place/Bar+Brutal/@37.3795437,-6.0070096,17z/data=!3m1!4b1!4m6!3m5!1s0xd126d42659d860d:0x7b9e362e5acab75a!8m2!3d37.3795395!4d-6.0044347!16s%2Fg%2F11qqx0cm7z?authuser=0&entry=ttu",reserva:"955389675",estrellas:"",imagen:twentytwo} ,
+{nombre:"TRIBUNA",ubicacion:"https://www.google.com/maps/place/Tribuna/@37.3794582,-6.0054616,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c3fdd16b9ab:0x2abe83350fe84cb6!8m2!3d37.379454!4d-6.0028867!16s%2Fg%2F1tdymgj0?authuser=0&entry=ttu",reserva:"954276340",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d10028152-Reviews-Tribuna-Seville_Province_of_Seville_Andalucia.html",imagen:twentythree} ,
+{nombre:"CERVECERÍA LA GRANDE",ubicacion:"https://www.google.com/maps/place/La+Grande/@37.3773301,-6.0094434,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c4053617599:0x1e7b3e2c43508a9c!8m2!3d37.3773259!4d-6.0068685!16s%2Fg%2F1vn9qbdg?authuser=0&entry=ttu",reserva:"No se reserva",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d7675191-Reviews-La_Grande-Seville_Province_of_Seville_Andalucia.html",imagen:twentyfour}
 ]
 
 
@@ -82,6 +95,9 @@ export const restaurancillos=[{nombre:"VICTORIA 8",ubicacion:"https://www.google
 {nombre:"ABADES TRIANA",ubicacion:"https://www.google.es/maps/place/Abades+Triana+Restaurante/@37.3816563,-6.0005782,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c1617df1ec3:0xaf465df648afc9d2!8m2!3d37.3816521!4d-5.9980033!16s%2Fg%2F1tfs29_b?entry=ttu",reserva:"https://www.thefork.es/restaurante/abades-triana-r3446",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d1178171-Reviews-Abades_Triana-Seville_Province_of_Seville_Andalucia.html",imagen:catorce} ,   
 {nombre:"BETIS 7",ubicacion:"https://www.google.es/maps/place/Betis+7+Triana+Experience+Restaurant/@37.3850643,-6.0048583,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c1484818add:0xda5f79aaa946344c!8m2!3d37.3850601!4d-6.0022834!16s%2Fg%2F11f4v4b63z?entry=ttu",reserva:"https://www.thefork.es/restaurante/betis-7-triana-experience-r558027",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d13940052-Reviews-Betis_7_Triana_Experience-Seville_Province_of_Seville_Andalucia.html",imagen:quince} ,   
 {nombre:"LA ESTACION FOOD BAR",ubicacion:"https://www.google.es/maps/place/La+Estaci%C3%B3n+Food+Bar/@37.3796192,-6.0032621,17z/data=!3m1!4b1!4m6!3m5!1s0xd126d4527075827:0x596507521337a0e7!8m2!3d37.379615!4d-6.0006872!16s%2Fg%2F11kpqmtv98?entry=ttu",reserva:"https://laestacionfoodbar.com/reservas/",estrellas:"https://www.tripadvisor.com.ar/Restaurant_Review-g187443-d26027777-Reviews-La_Estacion_Food_Bar-Seville_Province_of_Seville_Andalucia.html",imagen:dieciseis} ,   
- 
+{nombre:"JAYLU",ubicacion:"https://www.google.com/maps/place/Jaylu/@37.3794513,-6.0106772,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c41de960e81:0xde881821f84aa0fb!8m2!3d37.3794471!4d-6.0081023!16s%2Fg%2F1vc6fnj8?authuser=0&entry=ttu",reserva:"954339476",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d1002616-Reviews-Jaylu-Seville_Province_of_Seville_Andalucia.html",imagen:diecisiete} ,
+{nombre:"LOS CUEVAS",ubicacion:"https://www.google.com/maps/place/Restaurante+Los+Cuevas/@37.3793732,-6.0027455,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c3e13f5b2e1:0x4bd2e65f8ebc7c37!8m2!3d37.379369!4d-6.0001706!16s%2Fg%2F1tfrnlqz?authuser=0&entry=ttu",reserva:"954278042",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d1582718-Reviews-Los_Cuevas-Seville_Province_of_Seville_Andalucia.html",imagen:dieciocho} ,
+{nombre:"JOSE LUÍS",ubicacion:"https://www.google.com/maps/place/Restaurante+Jos%C3%A9+Luis+(Sevilla)/@37.3803781,-6.0007408,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c161dad5a51:0xc7f5376336b1652e!8m2!3d37.3803739!4d-5.9981659!16s%2Fg%2F1z44bwxt9?authuser=0&entry=ttu",reserva:"954272017",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d3576544-Reviews-Jose_Luis-Seville_Province_of_Seville_Andalucia.html",imagen:diecinueve} ,
+{nombre:"RÍO GRANDE",ubicacion:"https://www.google.com/maps/place/R%C3%ADo+Grande+Sevilla/@37.3811284,-6.0001777,17z/data=!3m1!4b1!4m6!3m5!1s0xd126d5553293919:0x110e0782db0937b4!8m2!3d37.3811242!4d-5.9976028!16s%2Fg%2F11khcm0mny?authuser=0&entry=ttu",reserva:"https://grupocarbon.es/restaurantes/rio-grande/",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d25348823-Reviews-Rio_Grande_Sevilla-Seville_Province_of_Seville_Andalucia.html",imagen:veinte}
 ]
 	

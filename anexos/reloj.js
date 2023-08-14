@@ -39,7 +39,7 @@ const Reloj = () => {
 
 const styles = StyleSheet.create({
   reloj: {
-    fontSize: 20,
+    fontSize: 25,
     width: '100%',
     borderColor:'magenta',
     backgroundColor:"#f0e29c",

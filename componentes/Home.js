@@ -1,12 +1,12 @@
 import React,{useState,useEffect} from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet,Linking } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Reloj from "../anexos/reloj";
 import { Audio } from "expo-av";
 const Home = () => {
 
   const navigation = useNavigation();
-
+/*
   //Para el sonido:
   const [sound, setSound] = useState();
 
@@ -34,8 +34,8 @@ const Home = () => {
       }
     };
   }, []);
-
-  
+*/
+  const politica=(url)=>{Linking.openURL(url)}
   return (
     <View style={styles.container}>
       <View style={styles.imagenes}>
@@ -53,6 +53,11 @@ const Home = () => {
         </Text>
       </View>
       <Reloj/>
+      <View style={styles.privacidadContainer}>
+        <TouchableOpacity onPress={() => politica("https://doc-hosting.flycricket.io/triana-bares-privacy-policy/da48365b-91bc-46ad-bebf-089e7cc1ff9e/privacy")}>
+          <Text style={styles.privacidad}>Política de privacidad</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -82,12 +87,20 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
   },
   link: {
-    fontSize:15,
+    fontSize:18,
     color: 'blue',
     
   },
   imagenes:{
     marginTop:10
+  },
+  privacidad:{
+    fontSize:8
+  }, privacidadContainer: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    padding: 8,
   }
 });
 

@@ -56,7 +56,7 @@ const Bares = () => {
                   </TouchableOpacity>
                 )}
                 <TouchableOpacity onPress={() => handleLinkPress(item.estrellas)}>
-                  <Text style={styles.link}>Estrellas de TripAdvisor</Text>
+                  <Text style={styles.link}>Valoración en TripAdvisor</Text>
                 </TouchableOpacity>
               </View>
               <Image source={item.imagen} style={styles.imagen} />

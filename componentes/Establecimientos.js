@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 16,
-    backgroundColor:'#e8d182'
+    backgroundColor:'#f6feee'
   },
   hora: {
     marginBottom: 16,

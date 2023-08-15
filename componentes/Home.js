@@ -54,7 +54,7 @@ const Home = () => {
       </View>
       <Reloj/>
       <View style={styles.privacidadContainer}>
-        <TouchableOpacity onPress={() => politica("https://doc-hosting.flycricket.io/triana-bares-privacy-policy/da48365b-91bc-46ad-bebf-089e7cc1ff9e/privacy")}>
+        <TouchableOpacity onPress={() => politica("https://docs.google.com/document/d/e/2PACX-1vReYGEVk4kZ5cqO3H0zEuaFEHcGR_UJTSCOwajN8E6biLIPNon6-g-RyJzgFy7CFXngL4VvBue_IbpI/pub?embedded=true")}>
           <Text style={styles.privacidad}>Política de privacidad</Text>
         </TouchableOpacity>
       </View>

@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Linking, ScrollView, TextInput, Button, Image} 
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { barecillos } from "../datos";
 import { useNavigation } from "@react-navigation/native";
-
+import PantallaGrande from "../assets/pantallagrande/Pantallagrande";
 
 const Bares = () => {
   const handleLinkPress = (url) => {
@@ -26,6 +26,14 @@ const Bares = () => {
   };
  
     const navigation=useNavigation()
+
+    const [showFullScreenImage, setShowFullScreenImage] = useState(false);
+    const [fullScreenImageUrl, setFullScreenImageUrl] = useState("");
+
+    const handleImageClick = (imageUri) => {
+      setFullScreenImageUrl(imageUri);
+      setShowFullScreenImage(true);
+    };
   return (
     <View style={styles.container}>
       <View style={styles.searchContainer}>
@@ -76,7 +84,9 @@ const Bares = () => {
                   <Text style={styles.link}>Carta</Text>
                   </TouchableOpacity>
               </View>
-              <Image source={item.imagen} style={styles.imagen} />
+              <TouchableOpacity onPress={() => handleImageClick(item.imagen)}>
+                <Image source={item.imagen} style={styles.imagen} />
+              </TouchableOpacity>
            
             </View>
             
@@ -86,6 +96,10 @@ const Bares = () => {
         )}
          
       </ScrollView>
+      {showFullScreenImage && (
+        <PantallaGrande imageUrl={fullScreenImageUrl} onClose={() => setShowFullScreenImage(false)} />
+      )}
+      
     </View>
   );
 };

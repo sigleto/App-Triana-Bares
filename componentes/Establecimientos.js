@@ -1,5 +1,5 @@
 import React,{useState,useEffect,useRef} from "react";
-import { View, Text, StyleSheet,Button} from "react-native";
+import { View, Text, StyleSheet,ScrollView} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import *as WebBrowser from 'expo-web-browser'
@@ -40,7 +40,7 @@ const Establecimi = () => {
     
     <View style={styles.container}>
      
-      
+      <ScrollView>
       <View style={styles.hora}>
         <Text style={styles.texto}>
           Antes de entrar en materia, puedes consultar en "thefork.es" la disponibilidad para hoy en Triana:
@@ -71,7 +71,7 @@ const Establecimi = () => {
         </TouchableOpacity>
       </View>
 
-  
+      </ScrollView>
     </View>
     
   );
@@ -96,11 +96,16 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     marginBottom: 8,
-    marginTop:70
+    marginTop:50,
+    marginLeft:70
+    
   },
   lista: {
     alignItems: "center",
     marginTop:30,
+    display:'flex',
+    flexDirection:'row',
+   marginLeft:40,
     
   },
   link: {
@@ -108,7 +113,8 @@ const styles = StyleSheet.create({
     color: "blue",
     textDecorationLine: "underline",
     marginTop:20,
-    padding:3
+    padding:3,
+    marginLeft:15
   
     
   },
@@ -130,12 +136,14 @@ const styles = StyleSheet.create({
     
     width: '50%', // Ajusta el ancho del contenedor
     height: '25%', // Ajusta la altura del contenedor
+    marginLeft:80
   
   },
   
   animation: {
     width: 200, // Ajusta el ancho de la animación
     height: 200, // Ajusta la altura de la animación
+    marginLeft:-10
   },
 });
 

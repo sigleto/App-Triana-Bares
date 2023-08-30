@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet,Linking } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet,Linking,ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Reloj from "../anexos/reloj";
 import { Audio } from "expo-av";
@@ -37,7 +37,9 @@ const Home = () => {
 */
   const politica=(url)=>{Linking.openURL(url)}
   return (
+    <ScrollView>
     <View style={styles.container}>
+      
       <View style={styles.imagenes}>
       <Image style={styles.logo} source={require('../assets/LogoJuan.png')} />
       <Image style={styles.imagen} source={require('../assets/principal.webp')} />
@@ -58,7 +60,8 @@ const Home = () => {
           <Text style={styles.privacidad}>Política de privacidad</Text>
         </TouchableOpacity>
       </View>
-    </View>
+     </View>
+     </ScrollView>
   );
 };
 

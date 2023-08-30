@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Linking, ScrollView, TextInput, Button, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { restaurancillos } from "../datos";
+import { useNavigation } from "@react-navigation/native";
 
 const Restaurantes = () => {
   const handleLinkPress = (url) => {
@@ -19,7 +20,7 @@ const Restaurantes = () => {
     const resultado = restaurancillos.filter((item) => item.nombre.toLowerCase().includes(local.toLowerCase()));
     setFilteredRestaurantes(resultado);
   };
-
+  const navigation=useNavigation()
   return (
     <View style={styles.container}>
       <View style={styles.searchContainer}>
@@ -54,8 +55,21 @@ const Restaurantes = () => {
                   </TouchableOpacity>
                 )}
                 <TouchableOpacity onPress={() => handleLinkPress(item.estrellas)}>
-                  <Text style={styles.link}>Valoración en TripAdvisor</Text>
+                  <Text style={styles.link}>Estrellas de TripAdvisor</Text>
                 </TouchableOpacity>
+                <TouchableOpacity
+                   onPress={() => {
+                    if (item.carta.includes(".jpg") || item.carta.includes(".png")){
+                    navigation.navigate("CartaScreen", { bar: item});
+                    }
+                                                              
+                     else if (item.carta.includes("https")) {
+                      handleLinkPress(item.carta);
+                    }
+                  }}
+                >
+                  <Text style={styles.link}>Carta</Text>
+                  </TouchableOpacity>  
               </View>
               <Image source={item.imagen} style={styles.imagen} />
             </View>
@@ -72,20 +86,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#f3fefe',
+    backgroundColor: '#f6f6e2',
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 16,
-    height:90
-
-    
   },
   textInput: {
     flex: 1,
     height: 40,
-    backgroundColor: "#f9f8d7",
+    backgroundColor: "#f4e93f",
     borderWidth: 1,
     marginRight: 10,
     paddingHorizontal: 10,
@@ -107,14 +118,14 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   link: {
-    fontSize: 16,
+    fontSize: 18,
     color: "blue",
     textDecorationLine: "underline",
-    padding:3
+    marginBottom:6
   },
   imagen: {
-    width: 150,
-    height: 150,
+    width: 180,
+    height: 180,
     marginLeft: 20,
   },
 });

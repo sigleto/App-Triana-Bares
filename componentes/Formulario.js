@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet,Image } from "react
 import { useForm, Controller } from "react-hook-form";
 import { useNavigation } from "@react-navigation/native";
 
+
 const Formulario = () => {
   const { control, handleSubmit, reset, formState: { errors } } = useForm();
   const [seleccion,setSeleccion]=useState(null)
@@ -15,7 +16,7 @@ const Formulario = () => {
         body: JSON.stringify(datos),
         headers: { "Content-Type": "application/json" }
       });
-      console.log("Datos enviados correctamente");
+      alert ('!!!Gracias por tu colaboración¡¡¡')
       reset();
       navigation.navigate("Home")
       setSeleccion(null); // Resetear el estilo del radioButtonSelected
@@ -121,6 +122,7 @@ const Formulario = () => {
           {errors.alias?.type === "required" && <View><Text>Es obligatorio ingresar un alias</Text></View>}
           {errors.correo?.type === "pattern" && <View><Text>Eso no es un correo válido</Text></View>}
           {errors.preferencias?.type === "required" && <View><Text>Por favor, elige una preferencia</Text></View>}
+          
         </View>
         <Image style={styles.imagen} source={require('../assets/pulpo.jpg')} />
       </View>
@@ -215,6 +217,12 @@ const styles = StyleSheet.create({
       width: 280,
       height: 160,
      marginBottom:60
+    },
+    mensaje:{
+      color: "green", // Puedes personalizar el color
+      fontSize: 18,
+      marginTop: 10,
+      textAlign: "center",
     }
 
 

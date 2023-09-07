@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from "react-native";
 import { useForm, Controller } from "react-hook-form";
-import { barecillos } from "../datos";
+import { restaurancillos } from "../datos";
 import { useDatos } from "./Contexto/Provider";
 import { db } from "../firebase"; 
 import {doc,getDoc,setDoc} from 'firebase/firestore'
 //import CookieManager from 'react-native-cookies'
 
 
-const Votacion = () => {
+const VotacionR = () => {
   const { datos, setDatos } = useDatos()
   const [seleccion, setSeleccion] = useState([]);
   const [submitted, setSubmitted] = useState(false);
@@ -30,7 +30,7 @@ const accion = async () => {
  }
 */
   if (seleccion.length === 3) {
-    const subirDatos = barecillos.map((item) => {
+    const subirDatos = restaurancillos.map((item) => {
       const nombre = item.nombre;
       const votos = seleccion.includes(nombre)
         ? seleccion.indexOf(nombre) === 0
@@ -47,7 +47,7 @@ const accion = async () => {
     setDatos([...subirDatos]);
 
     // Verifica si el documento "votosAcumulados" existe
-    const docRef = doc(db, "votaciones", "votosAcumulados");
+    const docRef = doc(db, "votacionesR", "votosAcumulados");
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
@@ -74,18 +74,19 @@ const accion = async () => {
     } else {
       // Si no existe, crea un nuevo documento
       try {
-        const docRef = await setDoc(doc(db, "votaciones", "votosAcumulados"), { datos: subirDatos });
+        const docRef = await setDoc(doc(db, "votacionesR", "votosAcumulados"), { datos: subirDatos });
         console.log("Document created with accumulated votes: ", docRef.id);
       } catch (e) {
         console.error("Error creating document: ", e);
       }
     }
-   /*Establece una cookie para marcar que el usuario ha votado
+  /*
    await CookieManager.set({
     hasVoted: 'true',
     expirationDate: '365', // La cookie expirará en 365 días
   });
 */
+
     setSubmitted(true);
   } else {
     alert("Debes seleccionar tres establecimientos.");
@@ -112,7 +113,7 @@ const toggleSeleccion = (value) => {
   useEffect(() => {
     // Llama a ambas funciones después de actualizar el estado de selección
     // Esto asegura que ambas funciones se ejecuten cuando cambie la selección
-    barecillos.forEach((item) => {
+    restaurancillos.forEach((item) => {
       if (seleccion[item.nombre]) {
         toggleSeleccion(item.nombre);
         seleccionar(item.nombre);
@@ -142,7 +143,7 @@ const toggleSeleccion = (value) => {
         </TouchableOpacity>
 
         <View style={styles.optionsContainer}>
-          {barecillos.map((item, index) => (
+          {restaurancillos.map((item, index) => (
             <View key={index} style={styles.option}>
               <Controller
                 control={control}
@@ -158,7 +159,7 @@ const toggleSeleccion = (value) => {
                     key={value}
                   >
                     <Text style={styles.optionText}>
-                      {item.nombre} - {seleccion[item.nombre] ? "No Seleccionado" : "Seleccionado"}
+                      {item.nombre} 
                     </Text>
                   </TouchableOpacity>
                 )}
@@ -170,12 +171,8 @@ const toggleSeleccion = (value) => {
       </ScrollView>
       {submitted && (
   <Text style={styles.submittedText}>
-    Resultados de Votación:
-    {datos.map((item) => (
-      <Text key={item.nombre}>
-        {item.nombre}: {item.votos} votos
-      </Text>
-    ))}
+     
+   ¡¡ GRACIAS POR VOTAR !!
   </Text>
 )}
     </View>
@@ -216,8 +213,8 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   submitButton: {
-    margin:'auto',
-    width:'20%',
+    marginLeft:'30%',
+    width:'40%',
     backgroundColor: "blue",
     padding: 16,
     borderRadius: 8,
@@ -230,10 +227,10 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   submittedText: {
-    fontSize: 18,
+    fontSize: 20,
     color: "green",
     marginTop: 16,
   },
 });
 
-export default Votacion;
+export default VotacionR;

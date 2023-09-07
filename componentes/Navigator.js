@@ -10,8 +10,10 @@ import Establecimi from "../componentes/Establecimientos";
 import Bares from "../componentes/Bares";
 import Restaurantes from "../componentes/Restaurantes";
 import Formulario from '../componentes/Formulario';
+import VotacionB from '../componentes/VotacionB'
+import VotacionR from '../componentes/VotacionR';
 import Carta from "./Carta";
-import Votacion from "./Votacion";
+import Votaciones from '../componentes/Votaciones' ;
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -25,10 +27,26 @@ function EstablecimientosStack() {
       <Stack.Screen name="Bares" component={Bares} />
       <Stack.Screen name="Restaurantes" component={Restaurantes} />
       <Stack.Screen name="CartaScreen" component={Carta} />
+     
+      
       
   
     </Stack.Navigator>
   );
+
+}
+function VotacionesStack() {
+
+  return (
+    <Stack.Navigator>
+
+      <Stack.Screen name="Votaciones" component={Votaciones} />
+      <Stack.Screen name="VotacionB" component={VotacionB} />
+      <Stack.Screen name="VotacionR" component={VotacionR} />
+        
+    </Stack.Navigator>
+  );
+
 }
 
 function MyTabs() {
@@ -73,8 +91,8 @@ function MyTabs() {
         }}
       />
   <Tab.Screen
-        name="Votacion"
-        component={Votacion}
+        name="Votaciones"
+        component={VotacionesStack}
         options={{
           tabBarLabel: "Votar",
           tabBarIcon: () => (

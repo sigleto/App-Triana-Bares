@@ -44,6 +44,8 @@ const Bares = () => {
   useEffect(() => {
     obtenerDatosFirebase();
   }, []);
+
+  
   const baresOrden = datos.slice().sort((a, b) => b.votos - a.votos);
   const buscar = () => {
     const resultado = baresOrden.filter((item) =>

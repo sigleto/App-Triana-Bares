@@ -2,7 +2,7 @@ import React,{useState,useEffect,useRef} from "react";
 import { View, Text, StyleSheet,ScrollView} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
-import *as WebBrowser from 'expo-web-browser'
+import *as WebBrowser from 'expo-web-browser';
 import LottieView from 'lottie-react-native';
 
 

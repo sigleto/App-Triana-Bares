@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { View, Text, StyleSheet, Linking, ScrollView, TextInput, Button, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { restaurancillos } from "../datos";
 import { useNavigation } from "@react-navigation/native";
 import PantallaGrande from "../assets/pantallagrande/Pantallagrande";
+import { useDatos } from "./Contexto/Provider";
+import { collection, getDocs } from "firebase/firestore"; 
+import { db } from "../firebase"; 
 
 const Restaurantes = () => {
   const handleLinkPress = (url) => {
@@ -16,6 +19,29 @@ const Restaurantes = () => {
 
   const [local, setLocal] = useState("");
   const [filteredRestaurantes, setFilteredRestaurantes] = useState(restaurancillos);
+
+  const { datos,setDatos } = useDatos();
+
+  
+  const obtenerDatosFirebase = async () => {
+    try {
+      const votacionesCollection = collection(db, 'votacionesR');
+      const snapshot = await getDocs(votacionesCollection);
+      const votacionesData = snapshot.docs.map(doc => doc.data());
+      // Actualiza el estado local con los datos de votación de Firebase
+      // Asumiendo que los datos están en un formato adecuado en Firebase.
+      // Actualiza el estado "datosfilteredBares" con los datos de votación
+      setDatos(votacionesData[0].datos);
+    } catch (error) {
+      console.error('Error al obtener los datos de Firebase: ', error);
+    }
+  };
+ 
+  useEffect(() => {
+    obtenerDatosFirebase();
+  }, []);
+
+  const restaOrden = datos.slice().sort((a, b) => b.votos - a.votos);
 
   const buscar = () => {
     const resultado = restaurancillos.filter((item) => item.nombre.toLowerCase().includes(local.toLowerCase()));
@@ -45,7 +71,7 @@ const Restaurantes = () => {
       </View>
       <ScrollView style={styles.restaurantesContainer}>
         {filteredRestaurantes.length > 0 ? (
-          filteredRestaurantes.map((item, index) => (
+          restaOrden.map((item, index) => (
             <View key={index} style={styles.restauranteContainer}>
               <View style={styles.textContainer}>
                 <Text style={styles.nombre}>{item.nombre}</Text>

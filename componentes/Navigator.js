@@ -3,7 +3,7 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer} from "@react-navigation/native";
 import { MaterialCommunityIcons,MaterialIcons } from "@expo/vector-icons";
-import { StyleSheet } from "react-native";
+
 
 import Home from '../componentes/Home';
 import Establecimi from "../componentes/Establecimientos";
@@ -11,6 +11,8 @@ import Bares from "../componentes/Bares";
 import Restaurantes from "../componentes/Restaurantes";
 import Formulario from '../componentes/Formulario';
 import Carta from "./Carta";
+import Votacion from "./Votacion";
+
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -23,6 +25,7 @@ function EstablecimientosStack() {
       <Stack.Screen name="Bares" component={Bares} />
       <Stack.Screen name="Restaurantes" component={Restaurantes} />
       <Stack.Screen name="CartaScreen" component={Carta} />
+      
   
     </Stack.Navigator>
   );
@@ -30,6 +33,7 @@ function EstablecimientosStack() {
 
 function MyTabs() {
   return (
+   
     <Tab.Navigator  >
       
       <Tab.Screen 
@@ -68,9 +72,20 @@ function MyTabs() {
           ),
         }}
       />
+  <Tab.Screen
+        name="Votacion"
+        component={Votacion}
+        options={{
+          tabBarLabel: "Votar",
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="contacts"  size={26} />
+          ),
+        }}
+      />    
 
       
     </Tab.Navigator>
+
   );
 }
 

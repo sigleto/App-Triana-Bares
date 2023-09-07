@@ -1,9 +1,14 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, Linking, ScrollView, TextInput, Button, Image} from "react-native";
+import React, { useState,useEffect } from "react";
+import { View, Text, StyleSheet, Linking, ScrollView, TextInput, Button, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { barecillos } from "../datos";
 import { useNavigation } from "@react-navigation/native";
 import PantallaGrande from "../assets/pantallagrande/Pantallagrande";
+import { useDatos } from "./Contexto/Provider";
+import { collection, getDocs } from "firebase/firestore"; 
+import { db } from "../firebase"; 
+
+
 
 const Bares = () => {
   const handleLinkPress = (url) => {
@@ -12,28 +17,51 @@ const Bares = () => {
 
   const handleCall = (phone) => {
     Linking.openURL(`tel:${phone}`);
-  }; 
+  };
 
   const [local, setLocal] = useState("");
   const [filteredBares, setFilteredBares] = useState(barecillos);
- 
 
+ 
+  const { datos,setDatos } = useDatos();
+
+  
+
+  const obtenerDatosFirebase = async () => {
+    try {
+      const votacionesCollection = collection(db, 'votaciones');
+      const snapshot = await getDocs(votacionesCollection);
+      const votacionesData = snapshot.docs.map(doc => doc.data());
+      // Actualiza el estado local con los datos de votación de Firebase
+      // Asumiendo que los datos están en un formato adecuado en Firebase.
+      // Actualiza el estado "datosfilteredBares" con los datos de votación
+      setDatos(votacionesData[0].datos);
+    } catch (error) {
+      console.error('Error al obtener los datos de Firebase: ', error);
+    }
+  };
+ 
+  useEffect(() => {
+    obtenerDatosFirebase();
+  }, []);
+  const baresOrden = datos.slice().sort((a, b) => b.votos - a.votos);
   const buscar = () => {
-    const resultado = barecillos.filter((item) =>
+    const resultado = baresOrden.filter((item) =>
       item.nombre.toLowerCase().includes(local.toLowerCase())
     );
     setFilteredBares(resultado);
   };
- 
-    const navigation=useNavigation()
 
-    const [showFullScreenImage, setShowFullScreenImage] = useState(false);
-    const [fullScreenImageUrl, setFullScreenImageUrl] = useState("");
+  const navigation = useNavigation();
 
-    const handleImageClick = (imageUri) => {
-      setFullScreenImageUrl(imageUri);
-      setShowFullScreenImage(true);
-    };
+  const [showFullScreenImage, setShowFullScreenImage] = useState(false);
+  const [fullScreenImageUrl, setFullScreenImageUrl] = useState("");
+
+  const handleImageClick = (imageUri) => {
+    setFullScreenImageUrl(imageUri);
+    setShowFullScreenImage(true);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.searchContainer}>
@@ -47,7 +75,7 @@ const Bares = () => {
       </View>
       <ScrollView style={styles.baresContainer}>
         {filteredBares.length > 0 ? (
-          filteredBares.map((item, index) => (
+          baresOrden.map((item, index) => (
             <View key={index} style={styles.barContainer}>
               <View style={styles.textContainer}>
                 <Text style={styles.bar}>{item.nombre}</Text>
@@ -71,35 +99,30 @@ const Bares = () => {
                   <Text style={styles.link}>Estrellas de TripAdvisor</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                   onPress={() => {
-                    if (item.carta.includes(".jpg") || item.carta.includes(".png")){
-                    navigation.navigate("CartaScreen", { bar: item});
-                    }
-                                                              
-                     else if (item.carta.includes("https")) {
+                  onPress={() => {
+                    if (item.carta.includes(".jpg") || item.carta.includes(".png")) {
+                      navigation.navigate("CartaScreen", { bar: item });
+                    } else if (item.carta.includes("https")) {
                       handleLinkPress(item.carta);
                     }
                   }}
                 >
                   <Text style={styles.link}>Carta</Text>
-                  </TouchableOpacity>
+                </TouchableOpacity>
               </View>
               <TouchableOpacity onPress={() => handleImageClick(item.imagen)}>
                 <Image source={item.imagen} style={styles.imagen} />
+                <Text>{item.votos}</Text>
               </TouchableOpacity>
-           
             </View>
-            
           ))
         ) : (
           <Text>No se encontraron resultados</Text>
         )}
-         
       </ScrollView>
       {showFullScreenImage && (
         <PantallaGrande imageUrl={fullScreenImageUrl} onClose={() => setShowFullScreenImage(false)} />
       )}
-      
     </View>
   );
 };
@@ -133,7 +156,6 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flex: 1,
-
   },
   bar: {
     fontSize: 18,
@@ -144,7 +166,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "blue",
     textDecorationLine: "underline",
-    marginBottom:6
+    marginBottom: 6,
   },
   imagen: {
     width: 180,

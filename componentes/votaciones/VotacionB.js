@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from "react-native";
 import { useForm, Controller } from "react-hook-form";
-import { restaurancillos } from "../datos";
-import { useDatos } from "./Contexto/Provider";
-import { db } from "../firebase"; 
-import {doc,getDoc,setDoc} from 'firebase/firestore'
-//import CookieManager from 'react-native-cookies'
+import { barecillos } from "../../datos";
+import { useDatos } from "../Contexto/Provider";
+import { db } from "../../firebase";
+import {doc,getDoc,setDoc,collection,addDoc} from 'firebase/firestore'
+import { obtenerDireccionIPDelUsuario,verificarSiLaDireccionIPYaHaVotado,registrarVotoEnBaseDeDatos } from "../ObtenerID";
 
 
-const VotacionR = () => {
+const VotacionB = () => {
   const { datos, setDatos } = useDatos()
   const [seleccion, setSeleccion] = useState([]);
   const [submitted, setSubmitted] = useState(false);
@@ -18,19 +18,22 @@ const VotacionR = () => {
 
 
 
-
 const accion = async () => {
+ // Obtener la dirección IP del usuario
+ const userIP = await obtenerDireccionIPDelUsuario();
+ if (!userIP) {
+   return; // Salir si no se pudo obtener la dirección IP
+ }
 
- /* Verifica si el usuario ya ha votado utilizando una cookie
- const hasVotedCookie = await CookieManager.get('hasVoted');
-
- if (hasVotedCookie.hasVoted === 'true') {
-   alert("Ya has emitido un voto.");
+ // Verificar si la dirección IP ya ha votado
+ const haVotado = await verificarSiLaDireccionIPYaHaVotado(userIP);
+ if (haVotado) {
+   alert('Ya has emitido un voto.');
    return;
  }
-*/
+
   if (seleccion.length === 3) {
-    const subirDatos = restaurancillos.map((item) => {
+    const subirDatos = barecillos.map((item) => {
       const nombre = item.nombre;
       const votos = seleccion.includes(nombre)
         ? seleccion.indexOf(nombre) === 0
@@ -47,7 +50,7 @@ const accion = async () => {
     setDatos([...subirDatos]);
 
     // Verifica si el documento "votosAcumulados" existe
-    const docRef = doc(db, "votacionesR", "votosAcumulados");
+    const docRef = doc(db, "votaciones", "votosAcumulados");
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
@@ -74,19 +77,14 @@ const accion = async () => {
     } else {
       // Si no existe, crea un nuevo documento
       try {
-        const docRef = await setDoc(doc(db, "votacionesR", "votosAcumulados"), { datos: subirDatos });
+        const docRef = await setDoc(doc(db, "votaciones", "votosAcumulados"), { datos: subirDatos });
         console.log("Document created with accumulated votes: ", docRef.id);
       } catch (e) {
         console.error("Error creating document: ", e);
       }
     }
-  /*
-   await CookieManager.set({
-    hasVoted: 'true',
-    expirationDate: '365', // La cookie expirará en 365 días
-  });
-*/
-
+      // Registrar el voto en la base de datos junto con la dirección IP
+      registrarVotoEnBaseDeDatos(userIP, seleccion);
     setSubmitted(true);
   } else {
     alert("Debes seleccionar tres establecimientos.");
@@ -109,17 +107,8 @@ const toggleSeleccion = (value) => {
       setSeleccion([...seleccion, value]);
       setCuenta(cuenta + 1);
     }
+    
   };
-  useEffect(() => {
-    // Llama a ambas funciones después de actualizar el estado de selección
-    // Esto asegura que ambas funciones se ejecuten cuando cambie la selección
-    restaurancillos.forEach((item) => {
-      if (seleccion[item.nombre]) {
-        toggleSeleccion(item.nombre);
-        seleccionar(item.nombre);
-      }
-    });
-  }, [seleccion]);
 
 
 
@@ -136,14 +125,14 @@ const toggleSeleccion = (value) => {
   return (
     <View style={styles.container}>
       <ScrollView>
-        <Text style={styles.header}>Votaciones</Text>
+        
         <Text style={styles.message}>{mensaje()}</Text>
         <TouchableOpacity onPress={handleSubmit(accion)} style={styles.submitButton}>
           <Text style={styles.submitButtonText}>VOTAR</Text>
         </TouchableOpacity>
 
         <View style={styles.optionsContainer}>
-          {restaurancillos.map((item, index) => (
+          {barecillos.map((item, index) => (
             <View key={index} style={styles.option}>
               <Controller
                 control={control}
@@ -233,4 +222,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default VotacionR;
+export default VotacionB;

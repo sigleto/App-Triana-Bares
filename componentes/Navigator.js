@@ -10,10 +10,10 @@ import Establecimi from "../componentes/Establecimientos";
 import Bares from "../componentes/Bares";
 import Restaurantes from "../componentes/Restaurantes";
 import Formulario from '../componentes/Formulario';
-import VotacionB from '../componentes/VotacionB'
-import VotacionR from '../componentes/VotacionR';
+import VotacionB from '../componentes/votaciones/VotacionB'
+import VotacionR from '../componentes/votaciones/VotacionR';
 import Carta from "./Carta";
-import Votaciones from '../componentes/Votaciones' ;
+import Votaciones from '../componentes/votaciones/Votaciones' ;
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -24,9 +24,9 @@ function EstablecimientosStack() {
     <Stack.Navigator>
       
       <Stack.Screen name="Establecimientos" component={Establecimi} />
-      <Stack.Screen name="Bares" component={Bares} />
-      <Stack.Screen name="Restaurantes" component={Restaurantes} />
-      <Stack.Screen name="CartaScreen" component={Carta} />
+      <Stack.Screen name="Bares" component={Bares}options={{ headerShown: false }}  />
+      <Stack.Screen name="Restaurantes" component={Restaurantes}options={{ headerShown: false }} />
+      <Stack.Screen name="CartaScreen" component={Carta}options={{ headerShown: false }} />
      
       
       
@@ -40,9 +40,9 @@ function VotacionesStack() {
   return (
     <Stack.Navigator>
 
-      <Stack.Screen name="Votaciones" component={Votaciones} />
-      <Stack.Screen name="VotacionB" component={VotacionB} />
-      <Stack.Screen name="VotacionR" component={VotacionR} />
+      <Stack.Screen name="Votaciones" component={Votaciones}options={{ headerShown: false }} />
+      <Stack.Screen name="VotacionB" component={VotacionB}options={{ headerShown: false }} />
+      <Stack.Screen name="VotacionR" component={VotacionR}options={{ headerShown: false }} />
         
     </Stack.Navigator>
   );
@@ -80,16 +80,7 @@ function MyTabs() {
         }}
       />
 
-<Tab.Screen
-        name="Formulario"
-        component={Formulario}
-        options={{
-          tabBarLabel: "Contacto",
-          tabBarIcon: () => (
-            <MaterialCommunityIcons name="contacts"  size={26} />
-          ),
-        }}
-      />
+
   <Tab.Screen
         name="Votaciones"
         component={VotacionesStack}
@@ -100,7 +91,16 @@ function MyTabs() {
           ),
         }}
       />    
-
+      <Tab.Screen
+        name="Formulario"
+        component={Formulario}
+        options={{
+          tabBarLabel: "Contacto",
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="contacts"  size={26} />
+          ),
+        }}
+      />
       
     </Tab.Navigator>
 
@@ -111,6 +111,7 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <MyTabs />
-    </NavigationContainer>
+      </NavigationContainer> 
+  
   );
 }

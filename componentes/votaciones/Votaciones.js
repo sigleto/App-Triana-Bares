@@ -7,19 +7,22 @@ const Votaciones = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Elige el tipo de establecimiento:</Text>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate("VotacionB")}
-      >
-        <Text style={styles.buttonText}>BARES</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate("VotacionR")}
-      >
-        <Text style={styles.buttonText}>RESTAURANTES</Text>
-      </TouchableOpacity>
+      <View style={styles.innerContainer}>
+      <Text style={styles.heading}>¿Sobre qué tipo de establecimientos quieres votar?</Text>
+      
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("VotacionB")}
+        >
+          <Text style={styles.buttonText}>BARES</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("VotacionR")}
+        >
+          <Text style={styles.buttonText}>RESTAURANTES</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#c8f799",
+    backgroundColor: "#c5f9c8",
   },
   heading: {
     fontSize: 24,
@@ -37,6 +40,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: "center",
   },
+  innerContainer: {
+    borderWidth: 1, // Agregar un borde alrededor del innerContainer
+    borderColor: "#000", // Color del borde (puedes cambiarlo)
+    borderRadius: 8, // Radio de borde del innerContainer
+    padding: 10, // Espacio de relleno del innerContainer
+    alignItems: "center",
+    backgroundColor: '#babfb6' ,
+    },
   button: {
     backgroundColor: "#3498db",
     paddingVertical: 12,

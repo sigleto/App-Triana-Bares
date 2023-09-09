@@ -6,6 +6,8 @@ import { useDatos } from "../Contexto/Provider";
 import { db } from "../../firebase"; 
 import {doc,getDoc,setDoc,collection,addDoc} from 'firebase/firestore'
 import { obtenerDireccionIPDelUsuario,verificarSiLaDireccionIPYaHaVotadoR,registrarVotoEnBaseDeDatosR } from "../ObtenerID";
+import { useNavigation } from '@react-navigation/native';
+
 
 const VotacionR = () => {
   const { datos, setDatos } = useDatos()
@@ -13,6 +15,13 @@ const VotacionR = () => {
   const [submitted, setSubmitted] = useState(false);
   const [cuenta, setCuenta] = useState(0);
   const { control, handleSubmit } = useForm();
+  
+  const [selectedButtonIndex, setSelectedButtonIndex] = useState(-1);
+
+  const navigation = useNavigation();
+
+
+
 
     const accion = async () => {
 
@@ -25,7 +34,8 @@ const VotacionR = () => {
  // Verificar si la dirección IP ya ha votado
  const haVotado = await verificarSiLaDireccionIPYaHaVotadoR(userIP);
  if (haVotado) {
-   alert('Ya has emitido un voto.');
+   alert('Ya habías votado anteriormente.');
+   navigation.navigate('Home');
    return;
  }
 
@@ -88,21 +98,15 @@ const VotacionR = () => {
   }
 };
 
-// Agrega una función para cambiar el estado de selección
-const toggleSeleccion = (value) => {
-  setSeleccion((prevSeleccion) => ({
-    ...prevSeleccion,
-    [value]: !prevSeleccion[value], // Invierte el estado de selección
-  }));
 
-}
  // establece tres selecciones 
-  const seleccionar = (value) => {
+  const seleccionar = (value,index) => {
     if (seleccion.includes(value)) {
       setSeleccion(seleccion.filter((item) => item !== value));
     } else if (seleccion.length < 3) {
       setSeleccion([...seleccion, value]);
       setCuenta(cuenta + 1);
+      setSelectedButtonIndex(index);
     }
   };
 
@@ -136,18 +140,17 @@ const toggleSeleccion = (value) => {
                 name={`sitios[${index}]`}
                 defaultValue={true}
                 render={({ field: { onChange, value } }) => (
-                  <TouchableOpacity
-                    onPress={() =>{seleccionar(item.nombre)}}
-                    style={[
-                      styles.optionButton,
-                      { backgroundColor: seleccion[item.nombre] ? "green" : "red" },
-                    ]}
-                    key={value}
-                  >
-                    <Text style={styles.optionText}>
-                      {item.nombre} 
-                    </Text>
-                  </TouchableOpacity>
+          <TouchableOpacity
+          onPress={() => seleccionar(item.nombre, index)}
+          style={[
+            styles.optionButton,
+            selectedButtonIndex === index && { backgroundColor: 'red' },
+          ]}
+        >
+          <Text style={styles.optionText}>
+            {item.nombre}
+          </Text>
+        </TouchableOpacity>
                 )}
               />
             </View>
@@ -193,6 +196,8 @@ const styles = StyleSheet.create({
   optionButton: {
     padding: 8,
     borderRadius: 8,
+    backgroundColor:"#02970b",
+    textAlign:'center',
   },
   optionText: {
     fontSize: 16,
@@ -206,6 +211,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: "center",
     marginBottom:5,
+    marginTop:10,
   },
   submitButtonText: {
     

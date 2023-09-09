@@ -87,7 +87,7 @@ function MyTabs() {
         options={{
           tabBarLabel: "Votar",
           tabBarIcon: () => (
-            <MaterialCommunityIcons name="contacts"  size={26} />
+            <MaterialCommunityIcons name="vote-outline"  size={26} />
           ),
         }}
       />    

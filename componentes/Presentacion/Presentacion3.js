@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
       backgroundColor:'#DAF7A6'
     },
     text: {
-      fontSize: 38,
-      textAlign: 'center',
+      fontSize: 26,
+      textAlign: 'justify',
       marginBottom: 20,
     },
   

@@ -77,7 +77,7 @@ const Bares = () => {
       </View>
       <ScrollView style={styles.baresContainer}>
         {filteredBares.length > 0 ? (
-          barecillos.map((item, index) => (
+          baresOrden.map((item, index) => (
             <View key={index} style={styles.barContainer}>
               <View style={styles.textContainer}>
                 <Text style={styles.bar}>{item.nombre}</Text>

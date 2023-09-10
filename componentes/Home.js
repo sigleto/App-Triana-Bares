@@ -36,7 +36,7 @@ const Home = () => {
 */
   const politica=(url)=>{Linking.openURL(url)}
   return (
-    <ScrollView>
+   
     <View style={styles.container}>
       
       <View style={styles.imagenes}>
@@ -55,7 +55,7 @@ const Home = () => {
         </TouchableOpacity>
       </View>
      </View>
-     </ScrollView>
+    
   );
 };
 
@@ -80,9 +80,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   per: {
-    fontSize: 30,
+    fontSize: 20,
     textAlign:'center',
-    color: '#050444'
+    color: '#050444',
+    marginBottom:40,
   },
   link: {
     fontSize:18,

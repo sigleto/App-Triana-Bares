@@ -15,7 +15,6 @@ const Home = () => {
     const { sound } = await Audio.Sound.createAsync( require('../assets/bensound-sunny.mp3')
     );
     setSound(sound);
-
     console.log('Playing Sound');
     await sound.playAsync();
     await sound.setVolumeAsync(0.1);
@@ -46,10 +45,7 @@ const Home = () => {
       </View>
       <View style={styles.parrafo}>
         <Text style={styles.per}>
-        Aquí tienes una lista de establecimientos gastronómicos ubicados en el barrio de TRIANA, categorizados como "BARES" y "RESTAURANTES".
-        Todos los restaurantes de la lista aceptan reservas, aunque no todos los bares lo hacen.
-        Además, todos los lugares catalogados como bares ofrecen tapas, mientras que algunos restaurantes también las sirven
-        En la sección <Text style={styles.resalto}>Contacto</Text> puedes proponer algún establecimiento que deseas que se incluya.
+        USA LA BARRA DE NAVEGACIÓN QUE TIENES EN LA PARTE DE ABAJO PARA ACCEDER A LAS DISTINTAS SECCIONES.
         </Text>
       </View>
       <Reloj/>
@@ -84,8 +80,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   per: {
-    fontSize: 16,
-    textAlign: 'justify',
+    fontSize: 30,
+    textAlign:'center',
+    color: '#050444'
   },
   link: {
     fontSize:18,

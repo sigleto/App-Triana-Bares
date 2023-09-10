@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet,Image } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet,Image,ScrollView } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { useNavigation } from "@react-navigation/native";
 
@@ -29,6 +29,7 @@ const Formulario = () => {
     <>
    
       <View style={styles.container}>
+        <ScrollView>
         <View style={styles.formulario}>
           <View style={styles.campos}>
             <Text style={styles.enunciados}>Alias</Text>
@@ -125,6 +126,7 @@ const Formulario = () => {
           
         </View>
         <Image style={styles.imagen} source={require('../assets/pulpo.jpg')} />
+      </ScrollView>
       </View>
       
     </>

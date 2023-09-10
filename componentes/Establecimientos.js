@@ -4,6 +4,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import *as WebBrowser from 'expo-web-browser';
 import LottieView from 'lottie-react-native';
+import { Platform } from "react-native";
 
 
 const Establecimi = () => {
@@ -54,12 +55,15 @@ const Establecimi = () => {
       </View>
       <Text style={styles.heading}>Elige categoría:</Text>
       <View style={styles.animationContainer}>
-      <LottieView
-       source={require('../assets/tenedores1.json')} // Reemplaza con la ruta a tu archivo de animación Lottie
-       autoPlay
-       loop
-       style={styles.animation}
-        />
+      {Platform.OS === "ios" || Platform.OS === "android" ? (
+            // Código de LottieView
+            <LottieView
+              source={require("../assets/tenedores1.json")} // Reemplaza con la ruta a tu archivo de animación Lottie
+              autoPlay
+              loop
+              style={styles.animation}
+            />
+          ) : null}
       </View>
 
       <View style={styles.lista}>

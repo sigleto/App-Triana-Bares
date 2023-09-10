@@ -45,7 +45,7 @@ const Restaurantes = () => {
 
   const buscar = () => {
     const resultado = restaurancillos.filter((item) => item.nombre.toLowerCase().includes(local.toLowerCase()));
-    setFilteredRestaurantes(resultado);
+    setDatos(resultado);
   };
   const navigation=useNavigation()
 

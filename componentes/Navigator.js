@@ -14,7 +14,9 @@ import VotacionB from '../componentes/votaciones/VotacionB'
 import VotacionR from '../componentes/votaciones/VotacionR';
 import Carta from "./Carta";
 import Votaciones from '../componentes/votaciones/Votaciones' ;
-
+import Presentacion1 from "./Presentacion/Presentacion1";
+import Presentacion2 from "./Presentacion/Presentacion2";
+import Presentacion3 from "./Presentacion/Presentacion3";
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -49,6 +51,17 @@ function VotacionesStack() {
 
 }
 
+export function PresentacionesStack(){
+  return(
+  <Stack.Navigator initialRouteName="Presentacion1" headerMode="none" >
+  <Stack.Screen name="Presentacion1" component={Presentacion1}options={{ headerShown: false }} />
+  <Stack.Screen name="Presentacion2" component={Presentacion2}options={{ headerShown: false }} />
+  <Stack.Screen name="Presentacion3" component={Presentacion3}options={{ headerShown: false }} />
+      
+  </Stack.Navigator>
+  )
+}
+
 function MyTabs() {
   return (
    
@@ -69,7 +82,7 @@ function MyTabs() {
         name="Locales"
         component={EstablecimientosStack}
         options={{
-          tabBarLabel: "Establecimientos",
+          tabBarLabel: "Locales",
           tabBarIcon: () => (
             <MaterialIcons
               name="restaurant"
@@ -109,9 +122,10 @@ function MyTabs() {
 
 export default function Navigation() {
   return (
-    <NavigationContainer>
-      <MyTabs />
-      </NavigationContainer> 
+   
+            <MyTabs />
+           
+       
   
   );
 }

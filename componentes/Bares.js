@@ -47,10 +47,10 @@ const Bares = () => {
   
   const baresOrden = datos.slice().sort((a, b) => b.votos - a.votos);
   const buscar = () => {
-    const resultado = baresOrden.filter((item) =>
+    const resultado = barecillos.filter((item) =>
       item.nombre.toLowerCase().includes(local.toLowerCase())
     );
-    setFilteredBares(resultado);
+    setDatos(resultado);
   };
 
   const navigation = useNavigation();
@@ -77,7 +77,7 @@ const Bares = () => {
       </View>
       <ScrollView style={styles.baresContainer}>
         {filteredBares.length > 0 ? (
-          baresOrden.map((item, index) => (
+          barecillos.map((item, index) => (
             <View key={index} style={styles.barContainer}>
               <View style={styles.textContainer}>
                 <Text style={styles.bar}>{item.nombre}</Text>
@@ -114,7 +114,7 @@ const Bares = () => {
               </View>
               <TouchableOpacity onPress={() => handleImageClick(item.imagen)}>
                 <Image source={item.imagen} style={styles.imagen} />
-                <Text>Votos:{item.votos}</Text>
+                <Text style={styles.colorB}>Votos:{item.votos}</Text>
               </TouchableOpacity>
             </View>
           ))
@@ -176,6 +176,9 @@ const styles = StyleSheet.create({
     height: 180,
     marginLeft: 20,
   },
+  colorB:{
+    color:"red"
+  }
 });
 
 export default Bares;

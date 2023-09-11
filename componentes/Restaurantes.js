@@ -45,7 +45,7 @@ const Restaurantes = () => {
 
   const buscar = () => {
     const resultado = restaurancillos.filter((item) => item.nombre.toLowerCase().includes(local.toLowerCase()));
-    setDatos(resultado);
+    setDatos(resultado);if (resultado==''){alert('No se han encontrado coincidencias')}
   };
   const navigation=useNavigation()
 
@@ -69,7 +69,7 @@ const Restaurantes = () => {
         />
         <Button title="BUSCAR" onPress={buscar} />
       </View>
-      <ScrollView style={styles.restaurantesContainer}>
+      <ScrollView style={styles.restaurantesContainer} showsVerticalScrollIndicator={false}>
         {filteredRestaurantes.length > 0 ? (
           restaOrden.map((item, index) => (
             <View key={index} style={styles.restauranteContainer}>

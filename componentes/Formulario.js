@@ -29,7 +29,7 @@ const Formulario = () => {
     <>
    
       <View style={styles.container}>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.formulario}>
           <View style={styles.campos}>
             <Text style={styles.enunciados}>Alias</Text>

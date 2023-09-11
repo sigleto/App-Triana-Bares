@@ -16,7 +16,7 @@ const VotacionR = () => {
   const [cuenta, setCuenta] = useState(0);
   const { control, handleSubmit } = useForm();
   
-  const [selectedButtonIndex, setSelectedButtonIndex] = useState(-1);
+
 
   const navigation = useNavigation();
 
@@ -100,34 +100,22 @@ const VotacionR = () => {
 
 
  // establece tres selecciones 
-  const seleccionar = (value,index) => {
-    if (seleccion.includes(value)) {
-      setSeleccion(seleccion.filter((item) => item !== value));
-    } else if (seleccion.length < 3) {
-      setSeleccion([...seleccion, value]);
-      setCuenta(cuenta + 1);
-      setSelectedButtonIndex(index);
-    }
-  };
+ const seleccionar = (value) => {
+  if (seleccion.includes(value)) {
+    setSeleccion(seleccion.filter((item) => item !== value));
+  } else if (seleccion.length < 3) {
+    setSeleccion([...seleccion, value]);
+  }
+};
 
 
 
-
-  const mensaje = () => {
-    if (cuenta === 1) {
-      return "Primera elección";
-    } else if (cuenta === 2) {
-      return "Segunda elección";
-    } else if (cuenta === 3) {
-      return "Tercera elección";
-    }
-  };
 
   return (
     <View style={styles.container}>
       <ScrollView>
         
-        <Text style={styles.message}>{mensaje()}</Text>
+      
         <TouchableOpacity onPress={handleSubmit(accion)} style={styles.submitButton}>
           <Text style={styles.submitButtonText}>VOTAR</Text>
         </TouchableOpacity>
@@ -138,13 +126,13 @@ const VotacionR = () => {
               <Controller
                 control={control}
                 name={`sitios[${index}]`}
-                defaultValue={true}
+                defaultValue={false}
                 render={({ field: { onChange, value } }) => (
           <TouchableOpacity
           onPress={() => seleccionar(item.nombre, index)}
           style={[
             styles.optionButton,
-            selectedButtonIndex === index && { backgroundColor: 'red' },
+            seleccion.includes(item.nombre) && { backgroundColor: 'red' },,
           ]}
         >
           <Text style={styles.optionText}>

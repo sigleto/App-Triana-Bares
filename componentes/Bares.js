@@ -50,7 +50,7 @@ const Bares = () => {
     const resultado = barecillos.filter((item) =>
       item.nombre.toLowerCase().includes(local.toLowerCase())
     );
-    setDatos(resultado);
+    setDatos(resultado);if (resultado==''){alert('No se han encontrado coincidencias')}
   };
 
   const navigation = useNavigation();
@@ -75,7 +75,7 @@ const Bares = () => {
         />
         <Button title="BUSCAR" onPress={buscar} />
       </View>
-      <ScrollView style={styles.baresContainer}>
+      <ScrollView style={styles.baresContainer} showsVerticalScrollIndicator={false}>
         {filteredBares.length > 0 ? (
           baresOrden.map((item, index) => (
             <View key={index} style={styles.barContainer}>

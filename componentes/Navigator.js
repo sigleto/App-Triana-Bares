@@ -53,7 +53,7 @@ function VotacionesStack() {
 
 export function PresentacionesStack(){
   return(
-  <Stack.Navigator initialRouteName="Presentacion1" headerMode="none" >
+  <Stack.Navigator initialRouteName="Presentacion1" options={{headerShown: false}} >
   <Stack.Screen name="Presentacion1" component={Presentacion1}options={{ headerShown: false }} />
   <Stack.Screen name="Presentacion2" component={Presentacion2}options={{ headerShown: false }} />
   <Stack.Screen name="Presentacion3" component={Presentacion3}options={{ headerShown: false }} />

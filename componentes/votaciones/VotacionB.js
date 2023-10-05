@@ -5,7 +5,7 @@ import { barecillos } from "../../datos";
 import { useDatos } from "../Contexto/Provider";
 import { db } from "../../firebase";
 import {doc,getDoc,setDoc,collection,addDoc} from 'firebase/firestore'
-import { obtenerDireccionIPDelUsuario,verificarSiLaDireccionIPYaHaVotado,registrarVotoEnBaseDeDatos } from "../ObtenerID";
+import { obtenerDireccionIPDelUsuario,verificarSiLaDireccionIPYaHaVotado,registrarVotoEnBaseDeDatos } from "../ObtenerIP";
 import { useNavigation } from '@react-navigation/native';
 
 

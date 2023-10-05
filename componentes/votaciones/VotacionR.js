@@ -5,7 +5,7 @@ import { restaurancillos } from "../../datos";
 import { useDatos } from "../Contexto/Provider";
 import { db } from "../../firebase"; 
 import {doc,getDoc,setDoc,collection,addDoc} from 'firebase/firestore'
-import { obtenerDireccionIPDelUsuario,verificarSiLaDireccionIPYaHaVotadoR,registrarVotoEnBaseDeDatosR } from "../ObtenerID";
+import { obtenerDireccionIPDelUsuario,verificarSiLaDireccionIPYaHaVotadoR,registrarVotoEnBaseDeDatosR } from "../ObtenerIP";
 import { useNavigation } from '@react-navigation/native';
 
 

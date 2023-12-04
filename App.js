@@ -12,7 +12,7 @@ export default function App() {
     <Provider>
       <NavigationContainer>
      
-      <Stack.Navigator initialRouteName="PresentacionesStack" headerMode="none">
+      <Stack.Navigator initialRouteName="PresentacionesStack" screenOptions={{headerShown: false}} >
           <Stack.Screen name="PresentacionesStack" component={PresentacionesStack} />
           <Stack.Screen name="Navigation" component={Navigation} />
        </Stack.Navigator>

@@ -98,7 +98,6 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 25,
-    fontWeight: "bold",
     marginBottom: 8,
     marginTop:50,
     marginLeft:70
@@ -126,7 +125,7 @@ const styles = StyleSheet.create({
     fontSize:19,
     marginTop:-100,
     textAlign: 'justify',
-    fontWeight:700
+    fontWeight:'bold',
   } ,
 
   box: {

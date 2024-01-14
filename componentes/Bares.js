@@ -177,7 +177,9 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   colorB:{
-    color:"red"
+    color:"red",
+    fontWeight:'bold',
+    fontSize:18,
   }
 });
 

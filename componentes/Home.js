@@ -10,13 +10,11 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Reloj from "../anexos/reloj";
-import { Audio } from "expo-av";
-
 const Home = () => {
   const navigation = useNavigation();
 
-  const politica = (url) => {
-    Linking.openURL(url);
+  const politica = () => {navigation.navigate('PoliticaPrivacidad')
+    
   };
 
   return (
@@ -30,14 +28,8 @@ const Home = () => {
       </View>
       <Reloj />
       <View style={styles.privacidadContainer}>
-        <TouchableOpacity
-          onPress={() =>
-            politica(
-              "https://docs.google.com/document/d/e/2PACX-1vReYGEVk4kZ5cqO3H0zEuaFEHcGR_UJTSCOwajN8E6biLIPNon6-g-RyJzgFy7CFXngL4VvBue_IbpI/pub?embedded=true"
-            )
-          }
-        >
-          <Text style={styles.privacidad}>Política de privacidad</Text>
+      <TouchableOpacity style={styles.skipButton} onPress={politica}>
+          <Text style={styles.buttonText}>SALTAR</Text>
         </TouchableOpacity>
       </View>
     </View>

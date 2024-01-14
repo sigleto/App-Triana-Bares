@@ -110,7 +110,7 @@ const Restaurantes = () => {
               </View>
               <TouchableOpacity onPress={() => handleImageClick(item.imagen)}>
                 <Image source={item.imagen} style={styles.imagen} />
-                <Text>Votos:{item.votos}</Text>
+                <Text style={styles.colorB}>Votos:{item.votos}</Text>
               </TouchableOpacity>
              
             </View>
@@ -172,6 +172,11 @@ const styles = StyleSheet.create({
     width: 180,
     height: 180,
     marginLeft: 20,
+  },
+  colorB:{
+    color:"red",
+    fontWeight:'bold',
+    fontSize:18
   },
 });
 

@@ -3,6 +3,7 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer} from "@react-navigation/native";
 import { MaterialCommunityIcons,MaterialIcons } from "@expo/vector-icons";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 
 import Home from '../componentes/Home';
@@ -17,11 +18,12 @@ import Votaciones from '../componentes/votaciones/Votaciones' ;
 import Presentacion1 from "./Presentacion/Presentacion1";
 import Presentacion2 from "./Presentacion/Presentacion2";
 import Presentacion3 from "./Presentacion/Presentacion3";
+import PoliticaPrivacidad from "./PoliticaPrivacidad";
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
 
-function EstablecimientosStack() {
+export function EstablecimientosStack() {
   return (
     <Stack.Navigator>
       
@@ -29,12 +31,15 @@ function EstablecimientosStack() {
       <Stack.Screen name="Bares" component={Bares}options={{ headerShown: false }}  />
       <Stack.Screen name="Restaurantes" component={Restaurantes}options={{ headerShown: false }} />
       <Stack.Screen name="CartaScreen" component={Carta}options={{ headerShown: false }} />
+      <Stack.Screen name="PoliticaPrivacidad" component={PoliticaPrivacidad}options={{ headerShown: false }} />
      
       
       
   
     </Stack.Navigator>
   );
+
+  
 
 }
 function VotacionesStack() {
@@ -62,7 +67,22 @@ export function PresentacionesStack(){
   )
 }
 
-function MyTabs() {
+const Drawer = createDrawerNavigator();
+
+export function MainDrawer() {
+  return (
+    <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="PoliticaPrivacidad" component={PoliticaPrivacidad} />
+      <Drawer.Screen name="PresentacionesStack" component={PresentacionesStack} />
+      <Drawer.Screen name="Formulario" component={Formulario} />
+    </Drawer.Navigator>
+  );
+}
+
+
+
+export function MyTabs() {
   return (
    
     <Tab.Navigator  >
@@ -119,7 +139,6 @@ function MyTabs() {
 
   );
 }
-
 export default function Navigation() {
   return (
    

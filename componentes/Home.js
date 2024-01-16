@@ -29,7 +29,7 @@ const Home = () => {
       <Reloj />
       <View style={styles.privacidadContainer}>
       <TouchableOpacity style={styles.skipButton} onPress={politica}>
-          <Text style={styles.buttonText}>SALTAR</Text>
+          <Text style={styles.buttonText}>Política de privacidad</Text>
         </TouchableOpacity>
       </View>
     </View>

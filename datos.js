@@ -19,6 +19,8 @@ import dieciocho from './locales/LosCuevas.jpg'
 import diecinueve from './locales/JoseLuis.jpg'
 import veinte from './locales/RioGrande.jpg'
 import veintiuno from './locales/BotasyBarriles.jpg'
+import veintidos from './locales/Amarra.jpg'
+
 
 import one from './locales/LaParrala.jpg'
 import two from './locales/LasGolondrinas2.jpg'
@@ -44,8 +46,9 @@ import twentyone from './locales/LaCocinadelTraca.jpg'
 import twentytwo from './locales/Brutal.jpg'
 import twentythree from './locales/Tribuna.jpg'
 import twentyfour from './locales/LaGrande.jpg'
+import twentyfive from './locales/Emilio.jpg'
+import twentysix from './locales/PeriquiChico.jpg'
 
-import cSalomon from './assets/menus/cartaSalomon.jpg'
 
 
 
@@ -75,8 +78,10 @@ export const barecillos=[{nombre:'LA PARRALA',ubicacion:"https://www.google.es/m
 {nombre:"BRUTAL",ubicacion:"https://www.google.com/maps/place/Bar+Brutal/@37.3795437,-6.0070096,17z/data=!3m1!4b1!4m6!3m5!1s0xd126d42659d860d:0x7b9e362e5acab75a!8m2!3d37.3795395!4d-6.0044347!16s%2Fg%2F11qqx0cm7z?authuser=0&entry=ttu",reserva:"955389675",estrellas:"",imagen:twentytwo, carta:"",votos:0} ,
 {nombre:"TRIBUNA",ubicacion:"https://www.google.com/maps/place/Tribuna/@37.3794582,-6.0054616,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c3fdd16b9ab:0x2abe83350fe84cb6!8m2!3d37.379454!4d-6.0028867!16s%2Fg%2F1tdymgj0?authuser=0&entry=ttu",reserva:"954276340",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d10028152-Reviews-Tribuna-Seville_Province_of_Seville_Andalucia.html",imagen:twentythree, carta:"",votos:0} ,
 {nombre:"CERVECERÍA LA GRANDE",ubicacion:"https://www.google.com/maps/place/La+Grande/@37.3773301,-6.0094434,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c4053617599:0x1e7b3e2c43508a9c!8m2!3d37.3773259!4d-6.0068685!16s%2Fg%2F1vn9qbdg?authuser=0&entry=ttu",reserva:"",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d7675191-Reviews-La_Grande-Seville_Province_of_Seville_Andalucia.html",imagen:twentyfour, carta:"./assets/menus/cartaLaGrande.jpg",votos:0},
-{nombre:"BOTAS Y BARRILES",ubicacion:"https://www.google.es/maps/place/Restaurante+Botas+y+Barriles+Triana/@37.3815442,-6.0092925,15z/data=!4m6!3m5!1s0xd126d53565fc69d:0xdb5bc36c52a11a57!8m2!3d37.3815442!4d-6.0092925!16s%2Fg%2F11h10zmcmy?entry=ttu",reserva:"669504657",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d23258426-Reviews-Botas_Y_Barrile-Seville_Province_of_Seville_Andalucia.html",imagen:veintiuno,carta:"",votos:0}
-
+{nombre:"BOTAS Y BARRILES",ubicacion:"https://www.google.es/maps/place/Restaurante+Botas+y+Barriles+Triana/@37.3815442,-6.0092925,15z/data=!4m6!3m5!1s0xd126d53565fc69d:0xdb5bc36c52a11a57!8m2!3d37.3815442!4d-6.0092925!16s%2Fg%2F11h10zmcmy?entry=ttu",reserva:"669504657",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d23258426-Reviews-Botas_Y_Barrile-Seville_Province_of_Seville_Andalucia.html",imagen:veintiuno,carta:"",votos:0},
+{nombre:"MARISCOS EMILIO",ubicacion:"https://www.google.com/maps/place/Mariscos+Emilio/@37.3803214,-6.0013796,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c69ecb8df59:0x65c6bf38394258b0!8m2!3d37.3803172!4d-5.9988047!16s%2Fg%2F1td6hr5v?authuser=0&entry=ttu",reserva:"954285032",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d1002572-Reviews-Mariscos_Emilio-Seville_Province_of_Seville_Andalucia.html",imagen:twentyfive,carta:"http://mariscosemilio.com/me-genova-lp-comedor/",votos:0},
+{nombre:"PERIQUI CHICO",ubicacion:"https://www.google.com/maps/place/Bar+Periqui+Chico/@37.3801938,-6.0016544,17z/data=!3m2!4b1!5s0xd126c3e003a503d:0x9daf3557528d8a27!4m6!3m5!1s0xd126d18218361c3:0xa5d704f88e750dac!8m2!3d37.3801896!4d-5.9990795!16s%2Fg%2F11j03s1prk?authuser=0&entry=ttu",reserva:"954281725",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d1002516-Reviews-Periqui_Chico-Seville_Province_of_Seville_Andalucia.html",imagen:twentysix, carta:'./assets/menus/cartaPeriquiChico.jpg',votos:0},
+{nombre:"",ubicacion:"",reserva:"",estrellas:"",imagen:"",carta:"",votos:0},
 
 ]
 
@@ -102,7 +107,8 @@ export const restaurancillos=[{nombre:"VICTORIA 8",ubicacion:"https://www.google
 {nombre:"JOSE LUÍS",ubicacion:"https://www.google.com/maps/place/Restaurante+Jos%C3%A9+Luis+(Sevilla)/@37.3803781,-6.0007408,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c161dad5a51:0xc7f5376336b1652e!8m2!3d37.3803739!4d-5.9981659!16s%2Fg%2F1z44bwxt9?authuser=0&entry=ttu",reserva:"954272017",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d3576544-Reviews-Jose_Luis-Seville_Province_of_Seville_Andalucia.html",imagen:diecinueve,carta:'./assets/menu/cartaJoseLuis.jpg',votos:0} ,
 {nombre:"RÍO GRANDE",ubicacion:"https://www.google.com/maps/place/R%C3%ADo+Grande+Sevilla/@37.3811284,-6.0001777,17z/data=!3m1!4b1!4m6!3m5!1s0xd126d5553293919:0x110e0782db0937b4!8m2!3d37.3811242!4d-5.9976028!16s%2Fg%2F11khcm0mny?authuser=0&entry=ttu",reserva:"https://grupocarbon.es/restaurantes/rio-grande/",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d25348823-Reviews-Rio_Grande_Sevilla-Seville_Province_of_Seville_Andalucia.html",imagen:veinte,carta:'https://grupocarbon.es/restaurantes/rio-grande/restaurante-rio-grande/restaurante-carta/',votos:0},
 {nombre:'GASCONA',ubicacion:"https://www.google.es/maps/place/Gascona/@37.3867464,-6.0048046,15z/data=!4m2!3m1!1s0x0:0x4ec5e366e3ccb3fa?sa=X&ved=2ahUKEwjrkPqV6IqAAxVCTqQEHYEkDuIQ_BJ6BAhPEAA&ved=2ahUKEwjrkPqV6IqAAxVCTqQEHYEkDuIQ_BJ6BAhjEAg",reserva:"https://www.thefork.es/restaurante/gascona-r726404#date=2023-07-13&hour=1230&partySize=2",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d23788283-Reviews-Gascona-Seville_Province_of_Seville_Andalucia.html",imagen:ten, carta:"https://www.thefork.es/restaurante/gascona-r726404/menu",votos:0},
-
+{nombre:"AMARRA",ubicacion:"https://www.google.com/maps/place/Bar+Amarra+Restaurante/@37.3848366,-6.0085531,17z/data=!3m1!4b1!4m6!3m5!1s0xd126ddeffec4aa9:0xb24432fe948c422b!8m2!3d37.3848324!4d-6.0059782!16s%2Fg%2F11ft2ytlcs?authuser=0&entry=ttu",reserva:"954338224",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d4083044-Reviews-Restaurante_Amarra-Seville_Province_of_Seville_Andalucia.html",imagen:veintidos,carta:"./assets/menus/cartaAmarra.jpg",votos:0},
+{nombre:"DE LA O",ubicacion:"https://www.google.com/maps/place/Restaurante+De+La+O/@37.3889452,-6.0094349,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c6cce848839:0xb1e8efbd084a3af6!8m2!3d37.388941!4d-6.00686!16s%2Fg%2F11f2w55f77?authuser=0&entry=ttu",reserva:"https://delaorestaurante.com/reservas/",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d13235122-Reviews-De_La_O-Seville_Province_of_Seville_Andalucia.html",imagen:"",carta:"https://delaorestaurante.com/carta/",votos:0},
 ]
 	
 

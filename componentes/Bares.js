@@ -7,6 +7,7 @@ import PantallaGrande from "../assets/pantallagrande/Pantallagrande";
 import { useDatos } from "./Contexto/Provider";
 import { collection, getDocs } from "firebase/firestore"; 
 import { db } from "../firebase"; 
+import Anuncio from "../anexos/Anuncio";
 
 
 const Bares = () => {
@@ -65,6 +66,7 @@ const Bares = () => {
 
   return (
     <View style={styles.container}>
+      <Anuncio/>
       <View style={styles.searchContainer}>
         <TextInput
           value={local}
@@ -87,7 +89,7 @@ const Bares = () => {
                 {item.reserva && (
                   <TouchableOpacity
                     onPress={() => {
-                      if (item.reserva.includes("95")) {
+                      if (item.reserva.includes("95")|| item.reserva.includes("6")) {
                         handleCall(item.reserva);
                       } else if (item.reserva.includes("https")) {
                         handleLinkPress(item.reserva);
@@ -97,14 +99,21 @@ const Bares = () => {
                     <Text style={styles.link}>Reserva una mesa</Text>
                   </TouchableOpacity>
                 )}
-                <TouchableOpacity onPress={() => handleLinkPress(item.estrellas)}>
+                <TouchableOpacity onPress={() => {
+                 if (item.estrellas.includes("https")) {
+                 handleLinkPress(item.estrellas);
+                 } else {
+                alert("No hay valoración de este establecimiento en TripAdvisor");
+                 }
+                  }}>
                   <Text style={styles.link}>Estrellas de TripAdvisor</Text>
                 </TouchableOpacity>
+
                 <TouchableOpacity
                   onPress={() => {
                     if (item.carta.includes(".jpg") || item.carta.includes(".png")) {
                       navigation.navigate("CartaScreen", { bar: item });
-                    } else if (item.carta.includes("https")) {
+                    } else if (item.carta.includes("http")) {
                       handleLinkPress(item.carta);
                     }
                   }}
@@ -121,6 +130,7 @@ const Bares = () => {
         ) : (
           <Text>No se encontraron resultados</Text>
         )}
+        
       </ScrollView>
       {showFullScreenImage && (
         <PantallaGrande imageUrl={fullScreenImageUrl} onClose={() => setShowFullScreenImage(false)} />

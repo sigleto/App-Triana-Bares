@@ -7,6 +7,7 @@ import { db } from "../../firebase";
 import {doc,getDoc,setDoc,collection,addDoc} from 'firebase/firestore'
 import { obtenerDireccionIPDelUsuario,verificarSiLaDireccionIPYaHaVotadoR,registrarVotoEnBaseDeDatosR } from "../ObtenerIP";
 import { useNavigation } from '@react-navigation/native';
+import Anuncio from "../../anexos/Anuncio";
 
 
 const VotacionR = () => {
@@ -114,7 +115,7 @@ const VotacionR = () => {
   return (
     <View style={styles.container}>
       <ScrollView>
-        
+    <Anuncio/>
       
         <TouchableOpacity onPress={handleSubmit(accion)} style={styles.submitButton}>
           <Text style={styles.submitButtonText}>VOTAR</Text>
@@ -145,6 +146,9 @@ const VotacionR = () => {
           ))}
         </View>
        
+        <TouchableOpacity onPress={handleSubmit(accion)} style={styles.submitButton}>
+          <Text style={styles.submitButtonText}>VOTAR</Text>
+        </TouchableOpacity>
       </ScrollView>
       {submitted && (
   <Text style={styles.submittedText}>

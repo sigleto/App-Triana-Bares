@@ -7,6 +7,7 @@ import PantallaGrande from "../assets/pantallagrande/Pantallagrande";
 import { useDatos } from "./Contexto/Provider";
 import { collection, getDocs } from "firebase/firestore"; 
 import { db } from "../firebase"; 
+import Anuncio from "../anexos/Anuncio";
 
 const Restaurantes = () => {
   const handleLinkPress = (url) => {
@@ -60,6 +61,7 @@ const Restaurantes = () => {
 
   return (
     <View style={styles.container}>
+    <Anuncio/>
       <View style={styles.searchContainer}>
         <TextInput
           value={local}

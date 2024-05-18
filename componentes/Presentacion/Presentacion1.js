@@ -11,7 +11,7 @@ const Presentacion1 = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Bienvenido a Triana Gastronómica</Text>
       <Text style={styles.text}>
-        Descubre una variedad de locales gastronómicos en el encantador barrio de Triana, categorizados como "BARES" y "RESTAURANTES". Todos los restaurantes aceptan reservas, aunque no todos los bares lo hacen. Además, todos los bares ofrecen deliciosas tapas, mientras que algunos restaurantes también las sirven.
+        Descubre una variedad de locales gastronómicos en el encantador barrio de Triana, categorizados como "BARES" y "RESTAURANTES". Todos los restaurantes aceptan reservas, aunque no todos los bares lo hacen. Por otro lado, en todos los bares puedes pedir tapas, aunque en los restaurantes esta opción depende del establecimiento.
       </Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.skipButton} onPress={salto}>

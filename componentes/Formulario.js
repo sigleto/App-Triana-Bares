@@ -105,7 +105,7 @@ const Formulario = () => {
               control={control}
               render={({ field: { onChange, onBlur, value } }) => (
                 <TextInput style={styles.comentarios}
-                  placeholder="Puedes enviar el nombre un establecimiento que deseas que se incluya,sugerencia o corrección."
+                  placeholder="Puedes enviar el nombre de un establecimiento que deseas que se incluya,sugerencia o corrección."
                   onBlur={onBlur}
                   onChangeText={onChange}
                   value={value}

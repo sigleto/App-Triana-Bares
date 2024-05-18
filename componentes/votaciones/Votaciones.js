@@ -1,10 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
-const Votaciones = () => {
+const Votacioness = () => {
   const navigation = useNavigation();
-
+  const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-6921150380725872/8908530226';
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
@@ -23,6 +24,10 @@ const Votaciones = () => {
           <Text style={styles.buttonText}>RESTAURANTES</Text>
         </TouchableOpacity>
       </View>
+      <BannerAd
+      unitId={adUnitId}
+      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+    />
     </View>
   );
 };
@@ -64,4 +69,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Votaciones;
+export default Votacioness;

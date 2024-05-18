@@ -25,8 +25,10 @@
         "backgroundColor": "#ffffff"
         
       },
+      "permissions": ["com.google.android.gms.permission.AD_ID"],
       "package": "com.sigleto.probando",
-      "versionCode": 14
+      "versionCode": 17
+      
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -36,5 +38,8 @@
         "projectId": "2c656502-57d0-487b-9fbf-5d94551cf00c"
       }
     }
+    },
+    "react-native-google-mobile-ads": {
+      "android_app_id": "ca-app-pub-6921150380725872~3710090157"
   }
 }

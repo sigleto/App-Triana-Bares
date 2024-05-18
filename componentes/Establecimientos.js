@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import *as WebBrowser from 'expo-web-browser';
 import LottieView from 'lottie-react-native';
 import { Platform } from "react-native";
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
 
 const Establecimi = () => {
@@ -12,7 +13,7 @@ const Establecimi = () => {
   const mes = fecha.getMonth() + 1;
   const dia = fecha.getDate();
   const año = fecha.getFullYear();
-
+  const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-6921150380725872/8908530226';
   const navigation = useNavigation();
 
  
@@ -74,7 +75,10 @@ const Establecimi = () => {
           <Text style={styles.link}>RESTAURANTES</Text>
         </TouchableOpacity>
       </View>
-
+      <BannerAd
+      unitId={adUnitId}
+      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+    />
       </ScrollView>
     </View>
     

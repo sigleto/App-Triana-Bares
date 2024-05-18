@@ -115,7 +115,7 @@ const VotacionR = () => {
   return (
     <View style={styles.container}>
       <ScrollView>
-    <Anuncio/>
+   <Anuncio/>
       
         <TouchableOpacity onPress={handleSubmit(accion)} style={styles.submitButton}>
           <Text style={styles.submitButtonText}>VOTAR</Text>

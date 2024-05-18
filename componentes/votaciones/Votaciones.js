@@ -5,12 +5,12 @@ import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads'
 
 const Votacioness = () => {
   const navigation = useNavigation();
-  const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-6921150380725872/8908530226';
+  
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
       <Text style={styles.heading}>¿Sobre qué tipo de establecimientos quieres votar?</Text>
-      
+      const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-6921150380725872/8908530226';
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate("VotacionB")}

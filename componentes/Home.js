@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 16,
     backgroundColor: "#f6f6e2",
+    marginBottom:10,
   },
   logo: {
     width: 300,
@@ -73,6 +74,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
     padding: 8,
+    
   },
 });
 

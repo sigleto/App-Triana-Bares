@@ -3,7 +3,7 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer} from "@react-navigation/native";
 import { MaterialCommunityIcons,MaterialIcons } from "@expo/vector-icons";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { StyleSheet,View} from "react-native";
 
 
 import Home from '../componentes/Home';
@@ -67,25 +67,14 @@ export function PresentacionesStack(){
   )
 }
 
-const Drawer = createDrawerNavigator();
-
-export function MainDrawer() {
-  return (
-    <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Screen name="Home" component={Home} />
-      <Drawer.Screen name="PoliticaPrivacidad" component={PoliticaPrivacidad} />
-      <Drawer.Screen name="PresentacionesStack" component={PresentacionesStack} />
-      <Drawer.Screen name="Formulario" component={Formulario} />
-    </Drawer.Navigator>
-  );
-}
-
-
 
 export function MyTabs() {
   return (
-   
-    <Tab.Navigator  >
+    
+    
+    <Tab.Navigator  screenOptions={{
+      tabBarStyle: { backgroundColor: 'red' },
+    }}>
       
       <Tab.Screen 
         name="Home"
@@ -93,7 +82,7 @@ export function MyTabs() {
         options={{
           tabBarLabel: "Inicio",
           tabBarIcon: () => (
-            <MaterialCommunityIcons name="home"  size={26} />
+            <MaterialCommunityIcons name="home"  size={26} style={styles.iconos}/>
           )
         }}
       />
@@ -107,7 +96,7 @@ export function MyTabs() {
             <MaterialIcons
               name="restaurant"
               
-              size={26}
+              size={26} style={styles.iconos}
             />
           ),
         }}
@@ -120,7 +109,7 @@ export function MyTabs() {
         options={{
           tabBarLabel: "Votar",
           tabBarIcon: () => (
-            <MaterialCommunityIcons name="vote-outline"  size={26} />
+            <MaterialCommunityIcons name="vote-outline"  size={26} style={styles.iconos}/>
           ),
         }}
       />    
@@ -130,15 +119,21 @@ export function MyTabs() {
         options={{
           tabBarLabel: "Contacto",
           tabBarIcon: () => (
-            <MaterialCommunityIcons name="contacts"  size={26} />
+            <MaterialCommunityIcons name="contacts"  size={26} style={styles.iconos} />
           ),
         }}
       />
       
     </Tab.Navigator>
-
+    
   );
 }
+const styles = StyleSheet.create({
+  iconos: {color:"#331da0",
+  backgroundColor:"#d7f794",
+fontWeight:'bold'},
+  })
+
 export default function Navigation() {
   return (
    

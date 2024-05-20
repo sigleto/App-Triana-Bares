@@ -20,6 +20,7 @@ import diecinueve from './locales/JoseLuis.jpg'
 import veinte from './locales/RioGrande.jpg'
 import veintiuno from './locales/BotasyBarriles.jpg'
 import veintidos from './locales/Amarra.jpg'
+import veintitres from './locales/DelaO.jpg'
 
 
 import one from './locales/LaParrala.jpg'
@@ -119,7 +120,7 @@ export const restaurancillos=[{nombre:"VICTORIA 8",ubicacion:"https://www.google
 {nombre:"RÍO GRANDE",ubicacion:"https://www.google.com/maps/place/R%C3%ADo+Grande+Sevilla/@37.3811284,-6.0001777,17z/data=!3m1!4b1!4m6!3m5!1s0xd126d5553293919:0x110e0782db0937b4!8m2!3d37.3811242!4d-5.9976028!16s%2Fg%2F11khcm0mny?authuser=0&entry=ttu",reserva:"https://grupocarbon.es/restaurantes/rio-grande/",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d25348823-Reviews-Rio_Grande_Sevilla-Seville_Province_of_Seville_Andalucia.html",imagen:veinte,carta:'https://grupocarbon.es/restaurantes/rio-grande/restaurante-rio-grande/restaurante-carta/',votos:0},
 {nombre:'GASCONA',ubicacion:"https://www.google.es/maps/place/Gascona/@37.3867464,-6.0048046,15z/data=!4m2!3m1!1s0x0:0x4ec5e366e3ccb3fa?sa=X&ved=2ahUKEwjrkPqV6IqAAxVCTqQEHYEkDuIQ_BJ6BAhPEAA&ved=2ahUKEwjrkPqV6IqAAxVCTqQEHYEkDuIQ_BJ6BAhjEAg",reserva:"https://www.thefork.es/restaurante/gascona-r726404#date=2023-07-13&hour=1230&partySize=2",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d23788283-Reviews-Gascona-Seville_Province_of_Seville_Andalucia.html",imagen:ten, carta:"https://www.thefork.es/restaurante/gascona-r726404/menu",votos:0},
 {nombre:"AMARRA",ubicacion:"https://www.google.com/maps/place/Bar+Amarra+Restaurante/@37.3848366,-6.0085531,17z/data=!3m1!4b1!4m6!3m5!1s0xd126ddeffec4aa9:0xb24432fe948c422b!8m2!3d37.3848324!4d-6.0059782!16s%2Fg%2F11ft2ytlcs?authuser=0&entry=ttu",reserva:"954338224",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d4083044-Reviews-Restaurante_Amarra-Seville_Province_of_Seville_Andalucia.html",imagen:veintidos,carta:"./assets/menus/cartaAmarra.jpg",votos:0},
-{nombre:"DE LA O",ubicacion:"https://www.google.com/maps/place/Restaurante+De+La+O/@37.3889452,-6.0094349,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c6cce848839:0xb1e8efbd084a3af6!8m2!3d37.388941!4d-6.00686!16s%2Fg%2F11f2w55f77?authuser=0&entry=ttu",reserva:"https://delaorestaurante.com/reservas/",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d13235122-Reviews-De_La_O-Seville_Province_of_Seville_Andalucia.html",imagen:"locales/DelaO.jpg",carta:"https://delaorestaurante.com/carta/",votos:0},
+{nombre:"DE LA O",ubicacion:"https://www.google.com/maps/place/Restaurante+De+La+O/@37.3889452,-6.0094349,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c6cce848839:0xb1e8efbd084a3af6!8m2!3d37.388941!4d-6.00686!16s%2Fg%2F11f2w55f77?authuser=0&entry=ttu",reserva:"https://delaorestaurante.com/reservas/",estrellas:"https://www.tripadvisor.es/Restaurant_Review-g187443-d13235122-Reviews-De_La_O-Seville_Province_of_Seville_Andalucia.html",imagen:veintitres,carta:"https://delaorestaurante.com/carta/",votos:0},
 ]
 	
 

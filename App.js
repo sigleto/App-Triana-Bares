@@ -5,7 +5,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { PresentacionesStack } from './componentes/Navigator';
 import PoliticaPrivacidad from './componentes/PoliticaPrivacidad';
+import { StyleSheet } from 'react-native';
+
+
+
 const Stack = createStackNavigator();
+
 
 export default function App() {
   return (
@@ -15,14 +20,12 @@ export default function App() {
      
       <Stack.Navigator initialRouteName="PresentacionesStack" screenOptions={{headerShown: false}} >
           <Stack.Screen name="PresentacionesStack" component={PresentacionesStack} />
-          <Stack.Screen name="Navigation" component={Navigation} />
+          <Stack.Screen name="Navigation" component={Navigation}  />
           <Stack.Screen name="PoliticaPrivacidad" component={PoliticaPrivacidad} /> 
        </Stack.Navigator>
            
    </NavigationContainer>
    </Provider>
-  
-   
   );
 }
 

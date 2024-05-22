@@ -130,7 +130,7 @@ export function MyTabs() {
 }
 const styles = StyleSheet.create({
   iconos: {color:"#331da0",
-  backgroundColor:"#d7f794",
+  backgroundColor:"#a9f913",
 fontWeight:'bold'},
   })
 

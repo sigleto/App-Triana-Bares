@@ -20,9 +20,11 @@ const fotos = [
   { nombre: "MIAMI", carta: [require('../assets/menus/CartaMiami.jpg')] },
   { nombre: "PERIQUI CHICO", carta: [require('../assets/menus/cartaPeriquiChico1.png'), require('../assets/menus/cartaPeriquiChico1.png')] },
   { nombre: "LA VALIENTE", carta: [require('../assets/menus/cartaLaValiente1.jpg'), require('../assets/menus/cartaLaValiente2.jpg')] },
+  { nombre: "MALASAÑA", carta: [require('../assets/menus/cartaMalasaña1.jpg'), require('../assets/menus/cartaMalasaña2.jpg')] },
   { nombre: "LA CORVINA", carta: [require('../assets/menus/CartaLaCorvina.png')] },
   { nombre: "BRUTAL", carta: [require('../assets/menus/cartaBrutal.jpg')] },
   { nombre: "AMARRA", carta: [require('../assets/menus/cartaAmarra.jpg')] },
+  { nombre: "TRIBUNA", carta: [require('../assets/menus/cartaTribuna.jpg')] },
 ];
 
 const CartaScreen = ({ route }) => {

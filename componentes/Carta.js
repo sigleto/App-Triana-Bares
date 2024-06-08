@@ -25,6 +25,7 @@ const fotos = [
   { nombre: "BRUTAL", carta: [require('../assets/menus/cartaBrutal.jpg')] },
   { nombre: "AMARRA", carta: [require('../assets/menus/cartaAmarra.jpg')] },
   { nombre: "TRIBUNA", carta: [require('../assets/menus/cartaTribuna.jpg')] },
+  { nombre: "LA ENTRAÑABLE", carta: [require('../assets/menus/cartaLaEntrañable.jpg')] },
 ];
 
 const CartaScreen = ({ route }) => {

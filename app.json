@@ -27,7 +27,7 @@
       },
       "permissions": ["com.google.android.gms.permission.AD_ID"],
       "package": "com.sigleto.probando",
-      "versionCode": 18
+      "versionCode": 20
       
     },
     "web": {
